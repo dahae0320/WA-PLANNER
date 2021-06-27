@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'S-CoreDream-2ExtraLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*
+{
+    /* font-family: Arial; */
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    display: flex;
+    background-image: url("https://blog.kakaocdn.net/dn/LGzA8/btqKopapw2M/2q76aZmxMcS3zzu3LeJDCk/%ED%99%94%EC%9D%B4%ED%8A%B8.jpeg?attach=1&knm=img.jpg");
+}
+.planner
+{
+    display: flex;
+    background-color: white;
+    width: 55vw;
+    height: 90vh;
+    margin: 50px;
+    margin-left: 60px;
+    margin-right: 30px;
+    box-shadow: 0px 0px 10px 0px rgb(190, 190, 190);
+    border-radius: 10px;
+    font-size: 80%;
+    font-weight: nomal;
+}
+
+.line
+{
+    width: 0.5px;
+    background-color: rgb(198, 198, 198);
+    box-shadow: 0px 0px 5px 0px rgb(146, 146, 146);
+}
+
+.planleft, .planright
+{
+    width: 27.5vw;
+    height: 90vh;
+}
+
+.date
+{
+    display: flex;
+    margin: 2rem;
+    margin-bottom: 0.5rem;
+    color: grey;
+    height: 4vh;
+    align-items: flex-end;
+
+}
+
+.dday, .todo
+{
+    margin: 2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    color: grey;
+    height: 13vh;
+    align-items: flex-end;
+}
+
+.date > p, .dday > p
+{
+    /* margin: 1em; */
+}
+
+.todatetext
+{
+    font-family: 'S-CoreDream-2ExtraLight';
+    font-size: 140%;
+    margin-left: 0.7vw;
+}
+
+.dtdday
+{
+    width: 20vw;
+    height: 10vh;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.dday-p
+{
+    color: grey;
+    font-family: S-CoreDream-2ExtraLight;
+    text-align: center;
+    font-size: 80%;
+}
+
+.todo-list
+{
+    height: 62vh;
+}
+.left
+{
+    width: 45vw;
+    height: 100vh;
+    
+}
+
+.timer
+{
+    display: flex;
+    width: 17vw;
+    height: 17vw;
+    margin: 7%;
+    margin-top: 10%;
+    border-radius: 150px;
+    background-color: white;
+    box-shadow: -8px -8px 3px 0px rgb(202, 202, 202) inset;
+    border: 1px solid rgb(212, 212, 212);
+    /* text-align: center; */
+    align-items: center;
+    margin: 10vh auto 2vh auto;
+   
+}
+
+.timer > p
+{
+    width: 20vw;
+    /* justify-items: center; */
+    text-align: center;
+    font-size: 220%;
+    font-weight: bold;
+    color: rgb(88, 88, 88);
+    
+}
+.timer-time
+{
+    display: flex;
+    width: 20vw;
+    height: 8vh;
+    border: 1px solid rgb(198, 198, 198);
+    margin: 5vh auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 4px 4px 3px 0px rgb(222, 222, 222) inset;
+    align-items: center;
+}
+
+.timer-time > p
+{
+    margin: 0 auto;
+    font-size: 220%;
+    color: rgb(88, 88, 88);
+}
