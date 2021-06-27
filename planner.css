@@ -19,10 +19,11 @@ body {
 .planner {
     background-color: white;
     display: flex;
-    width: 700px;
-    height: 610px;
+    width: 60vw;
+    height: 90vh;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 6vh;
+    margin-bottom: 4vh;
     box-shadow: 5px 5px 5px grey;
     border-radius: 15px;
 }
