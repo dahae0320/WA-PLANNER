@@ -68,7 +68,48 @@ body {
 }
 
 #timetable {
-    margin: 15px 0px 0px 15px;
+    margin: 4% 0px 0px 6%;
+    height: 80%;
+}
+
+.timetable-layout
+{
+    margin: 1% 0px 0px 3%;
+    height: 95%;
+    width: 90%;
+    display: flex;
+    font-size: 85%;
+    font-weight: lighter;
+    color: grey;
+    line-height: 140%;
+}
+
+.timetable-matrix
+{
+    margin: 1% 0px 0px 3%;
+    height: 95%;
+    width: 90%;
+}
+
+.timetable-matrix > ul
+{
+    display: flex;
+    list-style: none;
+    /* border: 1px solid blue; */
+    /* border: 1px solid rgb(187, 187, 187); */
+    width: 100%;
+    height: 3.8%;
+    margin: 0;
+    padding: 0;
+}
+
+.timetable-matrix > ul > li
+{
+    width: 1.6%;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 
