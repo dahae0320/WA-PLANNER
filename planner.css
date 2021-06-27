@@ -68,7 +68,7 @@ body {
 }
 
 #timetable {
-    margin: 4% 0px 0px 6%;
+    margin: 4% 0px 0px 3%;
     height: 80%;
 }
 
@@ -76,19 +76,28 @@ body {
 {
     margin: 1% 0px 0px 3%;
     height: 95%;
-    width: 90%;
-    display: flex;
+    width: 100%;
     font-size: 85%;
     font-weight: lighter;
     color: grey;
     line-height: 140%;
+    display: flex;
+}
+
+.timetable-number
+{
+    text-align: right;
+    font-size: 80%;
+    line-height: 1.8;
 }
 
 .timetable-matrix
 {
     margin: 1% 0px 0px 3%;
     height: 95%;
-    width: 90%;
+    width: 85%;
+    /* display: flex;
+    flex-wrap: wrap; */
 }
 
 .timetable-matrix > ul
@@ -97,7 +106,7 @@ body {
     list-style: none;
     /* border: 1px solid blue; */
     /* border: 1px solid rgb(187, 187, 187); */
-    width: 100%;
+    width: 95%;
     height: 3.8%;
     margin: 0;
     padding: 0;
