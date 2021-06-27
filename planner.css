@@ -42,22 +42,42 @@ body {
 .date-title, .date-real {
     display: inline;
 }
+.date-title {
+    font-size: 12px;
+    margin-right: 8px;
+    color:#7E7E7E;
+}
 .date-real {
-    font-size: 25px;
+    font-size: 20px;
+    color: #6A6A6A;
 }
 
 #dday-memo {
     margin: 5px 30px 0px 30px;
     color:#7E7E7E;
 }
+.dday-memo-title {
+    font-size: 12px;
+}
 .dday-memo-real {
     text-align: center;
     height: 60px;
     color: #9C9C9C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dday-memo-real > p {
+    font-size: 12px;
+    margin:0px;
 }
 
 #todo {
     margin: 5px 30px 0px 30px;
+}
+.todo-title {
+    font-size: 12px;
+    color:#7E7E7E;
 }
 
 #time {
