@@ -1,0 +1,81 @@
+body {
+    background-color: gray;
+    margin:0px;
+}
+.container {
+    display: flex;
+}
+.__planner, .__stopwatch {
+    background-color: yellowgreen;
+}
+.__planner {
+    flex-basis: 70%;
+}
+.__stopwatch {
+    flex-basis: 30%;
+    border: 1px red solid;
+}
+
+.planner {
+    background-color: white;
+    display: flex;
+    width: 700px;
+    height: 610px;
+    margin: auto;
+    margin-top: 60px;
+    box-shadow: 5px 5px 5px grey;
+    border-radius: 15px;
+}
+.planner-left {
+    flex-basis: 50%;
+    border: 1px solid grey;
+    border-style: none solid none none;
+}
+.planner-right {
+    flex-basis: 50%;
+}
+
+#date {
+    margin: 40px 30px 0px 30px;
+}
+.date-title, .date-real {
+    display: inline;
+}
+.date-real {
+    font-size: 25px;
+}
+
+#dday-memo {
+    margin: 5px 30px 0px 30px;
+    color:#7E7E7E;
+}
+.dday-memo-real {
+    text-align: center;
+    height: 60px;
+    color: #9C9C9C;
+}
+
+#todo {
+    margin: 5px 30px 0px 30px;
+}
+
+#time {
+    margin: 50px 0px 0px 15px;
+}
+.time-real {
+    font-size: 30px;
+}
+
+#timetable {
+    margin: 15px 0px 0px 15px;
+}
+
+
+.watch-btn {
+    width: 207px;
+    height: 207px;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size:35px;
+}
