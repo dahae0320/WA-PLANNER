@@ -4,6 +4,13 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'S-CoreDream-2ExtraLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 body {
     background-color: gray;
@@ -205,7 +212,7 @@ table tr th:last-child {
 .watch-btn {
     width: 207px;
     height: 207px;
-    background-color: FFFFFF; 
+    background-color: #FFFFFF; 
     border-radius: 50%;
     text-align: center;
     font-size:35px;
