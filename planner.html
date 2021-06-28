@@ -26,18 +26,7 @@
                         <div class="todo-title">TODO</div>
                         <div class="todo-layout">
                             <table>
-                                <tr>
-                                    <td>과목</td>
-                                    <td>자세한 일정</td>
-                                </tr>
-                                <tr>
-                                    <td>과목</td>
-                                    <td>자세한 일정</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>+ 이곳에 할일을 추가하세요.</td>
-                                </tr>
+                                <!-- TODO -->
                             </table>
                         </div>
                     </div>
@@ -61,5 +50,19 @@
             </div>
         </div>
     </div>
+    <script>
+    function generateTodo(table) {
+        for (let i = 0; i < 3; i++) {
+            let row = table.insertRow();
+            for (let j = 0; j < 2; j++) {
+                let cell = row.insertCell();
+                let text = document.createTextNode("안녕하세요");
+                cell.appendChild(text);
+            }
+        }
+    }
+    let table = document.querySelector('table');
+    generateTodo(table);
+    </script>
 </body>
 </html>
