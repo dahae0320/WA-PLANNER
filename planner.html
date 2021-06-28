@@ -62,18 +62,33 @@
         </div>
     </div>
     <script>
-    function generateTodo(table) {
-        for (let i = 0; i < 10; i++) {
-            let row = table.insertRow();
-            for (let j = 0; j < 2; j++) {
-                let cell = row.insertCell();
-                let text = document.createTextNode("안녕하세요");
-                cell.appendChild(text);
+        function getDate() {
+            const today = new Date();
+            let year = today.getFullYear();
+            let month = today.getMonth() + 1;  // 0~11을 출력하기 때문에 1을 더해준다.
+            let day = today.getDate();
+
+            if (Number(month) < 10) {   // month가 한자리수 일때,
+                month = '0' + month;
+            }
+
+            const date = year + '.' + month + '.' + day;
+            document.querySelector('.date-real').textContent = date;
+        }
+
+        function generateTodo(table) {
+            for (let i = 0; i < 10; i++) {
+                let row = table.insertRow();
+                for (let j = 0; j < 2; j++) {
+                    let cell = row.insertCell();
+                    let text = document.createTextNode("안녕하세요");
+                    cell.appendChild(text);
+                }
             }
         }
-    }
-    let table = document.querySelector('table');
-    generateTodo(table);
+        let table = document.querySelector('table');
+        generateTodo(table);
+        getDate();
     </script>
     <script src = "timer.js"></script>
     <script type="text/javascript" src="planner.js"></script>
