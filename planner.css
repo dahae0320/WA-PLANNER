@@ -13,14 +13,15 @@
 
 /* body,  */
 body {
-    background-color: gray;
+    /* background-color: gray; */
     margin:0px;
+    background-image: url('/image/back.jpeg');
 }
 .container {
     display: flex;
 }
 .__planner, .__stopwatch {
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
 }
 .__planner {
     flex-basis: 70%;
@@ -38,7 +39,7 @@ body {
     margin: auto;
     margin-top: 6vh;
     margin-bottom: 4vh;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 1px 5px 5px 5px grey;
     border-radius: 15px;
 }
 .planner-left {
