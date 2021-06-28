@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Bareun_hipi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bareun_hipi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: gray;
     margin:0px;
@@ -42,22 +49,64 @@ body {
 .date-title, .date-real {
     display: inline;
 }
-.date-real { 
-    font-size: 25px;
+
+.date-title {
+    font-size: 12px;
+    margin-right: 8px;
+    color:#7E7E7E;
 }
+.date-real {
+    font-size: 20px;
+    color: #6A6A6A;
+
 
 #dday-memo {
     margin: 5px 30px 0px 30px;
     color:#7E7E7E;
 }
+.dday-memo-title {
+    font-size: 12px;
+}
 .dday-memo-real {
     text-align: center;
     height: 60px;
     color: #9C9C9C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dday-memo-real > p {
+    font-size: 12px;
+    margin:0px;
 }
 
 #todo {
     margin: 5px 30px 0px 30px;
+}
+.todo-title {
+    font-size: 12px;
+    color:#7E7E7E;
+}
+table {
+    border-collapse: collapse;
+    width:100%;
+    font-family: 'Bareun_hipi';
+}
+table td, table th {
+    border:0.7px solid #909090;
+}
+table tr:first-child td {
+    border-top: 0;
+}
+table tr td:first-child,
+table tr th:first-child {
+    border-left: 0;
+    width: 20%;
+}
+table tr td:last-child,
+table tr th:last-child {
+    border-right: 0;
+    width: 80%;
 }
 
 #time {
