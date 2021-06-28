@@ -70,6 +70,7 @@ body {
 }
 .date-real {
     font-size: 20px;
+    font-family: 'S-CoreDream-2ExtraLight';
     color: #6A6A6A;
 }
 
@@ -85,6 +86,11 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'S-CoreDream-2ExtraLight';
+}
+.dday-memo-real:hover {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 .dday-memo-real > p {
     font-size: 12px;
