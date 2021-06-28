@@ -37,8 +37,16 @@
                         <div class="time-real">00H 00M 00S</div>
                     </div>
                     <div id="timetable">
-                        <div class="timetable-title">TIMETABLE</div>
-                        <div class="timetable-layout">레이아웃</div>
+                        <div class="timetable-title">
+                            <p>TIMETABLE<p></p>
+                        </div>
+                        <div class="timetable-layout">
+                            <!-- <div class="timetable-number">
+                                5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>1<br>2<br>3<br>4<br>5<br>
+                                6<br>7<br>8<br>9<br>10<br>11<br>12<br>1<br>2<br>3<br>4
+                            </div> -->
+                            <div class="timetable-matrix"></div>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -64,5 +72,6 @@
     let table = document.querySelector('table');
     generateTodo(table);
     </script>
+    <script type="text/javascript" src="planner.js"></script>
 </body>
 </html>
