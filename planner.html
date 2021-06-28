@@ -53,8 +53,11 @@
         </div>
         <div class="__stopwatch">
             <div id="stopwatch">
-                <button class="watch-btn">START</button>
-                <div class="watch-face">00H00M00S</div>
+                <button class="watch-btn" id ="btn-start">START</button>
+                <button class="watch-btn" id ="btn-pause">PAUSE</button>
+                <button class = "watch-btn" id="btn-stop">STOP</button>
+                <button class = "watch-btn" id="btn-reset"></button>
+                <span class="watch-face" id = "display">00:00:00</span>
             </div>
         </div>
     </div>
@@ -72,6 +75,7 @@
     let table = document.querySelector('table');
     generateTodo(table);
     </script>
+    <script src = "timer.js"></script>
     <script type="text/javascript" src="planner.js"></script>
 </body>
 </html>
