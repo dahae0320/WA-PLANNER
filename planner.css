@@ -75,8 +75,28 @@ body {
 .watch-btn {
     width: 207px;
     height: 207px;
-    background-color: white;
+    background-color: FFFFFF; 
     border-radius: 50%;
     text-align: center;
     font-size:35px;
+}
+
+#btn-reset {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+#btn-play {
+    display: block;
+  }
+#btn-pause {
+    
+    display: none;
+    
+  }
+#btn-stop{
+    display: none;
+    
 }
