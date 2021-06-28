@@ -4,7 +4,14 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'S-CoreDream-2ExtraLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
+/* body,  */
 body {
     background-color: gray;
     margin:0px;
@@ -50,7 +57,7 @@ body {
     display: inline;
 }
 
-.date-title {
+.date-title, .dday-memo-title, .todo-title {
     font-size: 12px;
     margin-right: 8px;
     color:#7E7E7E;
@@ -64,9 +71,6 @@ body {
     margin: 5px 30px 0px 30px;
     color:#7E7E7E;
 }
-.dday-memo-title {
-    font-size: 12px;
-}
 .dday-memo-real {
     text-align: center;
     height: 60px;
@@ -74,6 +78,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'S-CoreDream-2ExtraLight';
 }
 .dday-memo-real > p {
     font-size: 12px;
@@ -82,10 +87,6 @@ body {
 
 #todo {
     margin: 5px 30px 0px 30px;
-}
-.todo-title {
-    font-size: 12px;
-    color:#7E7E7E;
 }
 table {
     border-collapse: collapse;
@@ -205,7 +206,7 @@ table tr th:last-child {
 .watch-btn {
     width: 207px;
     height: 207px;
-    background-color: FFFFFF; 
+    background-color: #FFFFFF; 
     border-radius: 50%;
     text-align: center;
     font-size:35px;
