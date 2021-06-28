@@ -113,6 +113,13 @@ table tr th:last-child {
     border-right: 0;
     width: 80%;
 }
+tbody > tr > td > input {
+    border:none;
+    width:100%;
+}
+tbody > tr > td > input:focus {
+    outline:none;
+}
 
 #time {
     /* margin: 20% 0px 0px 7%; */

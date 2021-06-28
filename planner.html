@@ -62,6 +62,7 @@
         </div>
     </div>
     <script>
+        // 현재 날짜 출력 (DATE)
         function getDate() {
             const today = new Date();
             let year = today.getFullYear();
@@ -69,25 +70,38 @@
             let day = today.getDate();
 
             if (Number(month) < 10) {   // month가 한자리수 일때,
-                month = '0' + month;
+                month = '0' + month;   // 십의 자리를 0으로 표기한다.
             }
 
             const date = year + '.' + month + '.' + day;
             document.querySelector('.date-real').textContent = date;
         }
 
-        function generateTodo(table) {
+        // 할일 테이블 출력 (TODO)
+        function generateTodoTable(table) {
             for (let i = 0; i < 10; i++) {
                 let row = table.insertRow();
                 for (let j = 0; j < 2; j++) {
                     let cell = row.insertCell();
-                    let text = document.createTextNode("안녕하세요");
+                    let text;
+                    if (j == 0) {
+                        text = document.createTextNode("+");
+                    } else {
+                        // text = document.createTextNode("+ 이곳에 할 일을 추가하세요");
+                        text = document.createElement('input');
+                        text.style.border = "none";
+                    }
                     cell.appendChild(text);
                 }
             }
         }
+
+        function createTodo() {
+            
+        }
+
         let table = document.querySelector('table');
-        generateTodo(table);
+        generateTodoTable(table);
         getDate();
     </script>
     <script src = "timer.js"></script>
