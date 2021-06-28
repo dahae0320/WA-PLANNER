@@ -116,8 +116,8 @@ table tr th:last-child {
 }
 
 #time {
-    /* margin: 20% 0px 0px 7%; */
-    margin: 10vh 0px 0px 3vh;
+    margin: 20% 0px 0px 7%;
+    /* margin: 10vh 0px 0px 3vh; */
     font-weight: lighter;
 }
 .time-real {
@@ -125,8 +125,8 @@ table tr th:last-child {
 }
 
 #timetable {
-    margin: 2vh 0px 0px 0.5vh;
-    /* margin: 4% 0px 0px 1%; */
+    /* margin: 2vh 0px 0px 0.5vh; */
+    margin: 4% 0px 0px 1%;
     height: 80%;
     font-weight: lighter;
 }
