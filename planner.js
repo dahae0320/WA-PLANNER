@@ -63,6 +63,7 @@ for (let i = 0; i < 24; i++)
 // 4. 시간 숫자랑 격자 줄이랑 잘 안맞음. -> ul 앞에 숫자 추가하는 걸로 바꾸기? => 완료
 // 5. 칠할 때 ul 위쪽 border가 먹힘.
 // 6. 스크린 넓이 .. 가져와서 step 계산하기 or 이전 요소랑 비교해 같으면 추가 아니면 pass
+// 7. 코드 함수화 해서 정리하기
 //--------------------------------------------------------------------------------//
 
 const blockColor = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];  // 나중에 사용자 지정 색 받아오기.
@@ -72,7 +73,7 @@ let mouseCnt = 0;
 var mouseIsOverParentName = ""; //undefined 방지하기위해 자료형 정해줌.
 var colorCnt = -1;
 var mouseIsPass = new Array();
-var mouseDownFirstX, mouseDownFirstY, mouseDownLastX, mouseDownLastY;
+var mouseDownFirstX;
 
 //마우스가 움직일 때마다 현재 마우스 좌표에 있는 element를 가져옴.
 timetable.addEventListener("mousemove", function(event) {
@@ -85,7 +86,6 @@ timetable.addEventListener("mousemove", function(event) {
         mouseFlag = true; 
         if(mouseCnt == 0){             
             mouseDownFirstX = x;
-            mouseDownFirstY = y;
             mouseIsOverParentName = mouseIsOverNow.parentNode.className;
             // console.log(mouseIsOverParentName, mouseIsOverNow.parentNode.className);
             colorCnt++;
@@ -99,7 +99,7 @@ timetable.addEventListener("mousemove", function(event) {
     //현재 객체가 li이고, mousedown상태이며, mousedown시 부모와 현재 부모가 같을 때만 색칠
 
     if(mouseIsOverNow.tagName == "LI" && mouseFlag == true && mouseIsOverNowName == mouseIsOverParentName){
-        for(let i = mouseDownFirstX; i < x; i++){       //스크린 넓이 계산해서 step 조정하기
+        for(let i = mouseDownFirstX; i < x; i++){       //조정 필요
             var mouseIsOverNow = document.elementFromPoint(i, y);
             mouseIsPass.push(mouseIsOverNow);
         }
