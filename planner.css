@@ -42,7 +42,7 @@ body {
 .date-title, .date-real {
     display: inline;
 }
-.date-real {
+.date-real { 
     font-size: 25px;
 }
 
