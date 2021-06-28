@@ -279,9 +279,10 @@ table tr th:last-child {
     margin-top: 30%;
 }
 .cal-btn-right{
+    
     transform: rotate(90deg);
 }
-.__total-cal{
+#__total-cal{
     display: none;
     position: absolute;
     left: 190px;
@@ -293,14 +294,14 @@ table tr th:last-child {
     border-radius: 10px;
     cursor: move;
 }
-#dial-btn-open,#cal-btn-year{
+#dial-btn-open,#cal-btn-year,#dial-btn-close{
     display: none;
 }
-.d-b-o,#count,.nemo{
+.d-b-o,#count,.nemo,.exit{
     cursor: pointer;
 }
 .__calendar{
-    /* display: none; */
+    display: none;
     position: absolute;
 }
 #dial-btn-open:checked + .__calendar{
@@ -319,4 +320,37 @@ table tr th:last-child {
 }
 #cal-btn-year:checked + .__total-cal{
     display: inline;
+}
+.__righttop{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    text-align: right;
+    width: 120px;
+    height: 64px;
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 20px;
+    flex-direction: column;
+    border-right: 1px solid #929292;
+}
+#rt-page{
+    margin-right: 10px;
+}
+a:link { 
+    color: black; text-decoration: none;
+}
+a:visited { 
+    color: black; text-decoration: none;
+}
+a:hover { 
+    color: black; text-decoration: none;
+}
+.setting-img{
+    position: fixed;
+    right: 8px;
+    bottom: 8px;
 }
