@@ -10,18 +10,23 @@
     font-weight: normal;
     font-style: normal;
 }
+/* <<<<<<< HEAD
 
 
+=======
+>>>>>>> e190f625e10a763dd6f9545dc4c918bcce411010 */
 
+/* body,  */
 body {
-    background-color: gray;
+    /* background-color: gray; */
     margin:0px;
+    background-image: url('/image/back.jpeg');
 }
 .container {
     display: flex;
 }
 .__planner, .__stopwatch {
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
 }
 .__planner {
     flex-basis: 70%;
@@ -40,7 +45,7 @@ body {
     margin: auto;
     margin-top: 6vh;
     margin-bottom: 4vh;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 1px 5px 5px 5px grey;
     border-radius: 15px;
 }
 .planner-left {
@@ -59,7 +64,7 @@ body {
     display: inline;
 }
 
-.date-title {
+.date-title, .dday-memo-title, .todo-title {
     font-size: 12px;
     margin-right: 8px;
     color:#7E7E7E;
@@ -73,9 +78,6 @@ body {
     margin: 5px 30px 0px 30px;
     color:#7E7E7E;
 }
-.dday-memo-title {
-    font-size: 12px;
-}
 .dday-memo-real {
     text-align: center;
     height: 60px;
@@ -83,6 +85,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'S-CoreDream-2ExtraLight';
 }
 .dday-memo-real > p {
     font-size: 12px;
@@ -91,10 +94,6 @@ body {
 
 #todo {
     margin: 5px 30px 0px 30px;
-}
-.todo-title {
-    font-size: 12px;
-    color:#7E7E7E;
 }
 table {
     border-collapse: collapse;
@@ -212,6 +211,7 @@ table tr th:last-child {
 
 
 .watch-btn {
+
     /* display: flex; */
     
     width: 20vw;
@@ -221,17 +221,22 @@ table tr th:last-child {
     background: #FFFFFF;
     border: 1px solid #F2F2F2;
     box-sizing: border-box;
+
+    width: 207px;
+    height: 207px;
+    background-color: #FFFFFF; 
+
     border-radius: 50%;
     font-family: Arial;
-font-style: normal;
-font-weight: bold;
-font-size: 35px;
-line-height: 40px;
-display: flex;
-align-items: center;
-text-align: center;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 
-color: #616161;
+    color: #616161;
     
     float:left;
     margin-top: 30%;
