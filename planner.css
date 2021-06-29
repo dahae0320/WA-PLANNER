@@ -11,6 +11,12 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'LAB디지털';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     /* background-color: gray; */
@@ -28,7 +34,7 @@ body {
 }
 .__stopwatch {
     flex-basis: 30%;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     
 }
 
@@ -248,11 +254,8 @@ tbody > tr > td > input:focus {
     background: #FFFFFF;
     border: 1px solid #F2F2F2;
     box-sizing: border-box;
-
-    width: 207px;
-    height: 207px;
+  
     background-color: #FFFFFF; 
-
     border-radius: 50%;
     font-family: Arial;
     font-style: normal;
@@ -262,45 +265,38 @@ tbody > tr > td > input:focus {
     display: flex;
     align-items: center;
     text-align: center;
-
     color: #616161;
-    
     float:left;
     margin-top: 30%;
-
+    
 }
 
 #btn-start {
-
-    font-family: 'Bareun_hipi';
-font-style: normal;
-font-weight: bold;
-font-size: 35px;
-line-height: 40px;
-display: flex;
-align-items: center;
-text-align: center;
-
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
     display: block;
     border-radius: 50%;
     margin-left : 15%;
     
   }
 #btn-pause{
-    
     display: none;
     width: 10vw;
     border-radius: 10vw 0px 0px 10vw;
-    margin-left : 15%;
+    margin-left : 15%;   
     
 }
 
 #btn-stop{
+    
     display: none;
     width: 10vw;
     border-radius: 0px 10vw 10vw 0px;
-    
-
 }
 
 .dial-btn-image{
@@ -430,7 +426,6 @@ a:hover {
     width: 20px;
     height: 20px;
     background-color: red;
-    
 }
 
 #display{
@@ -439,17 +434,17 @@ a:hover {
     height: 6vw;
     left : 75%;
     top : 60%;
-    font-family: 'DS-Digital';
+
     font-style: normal;
     font-weight: bold;
     font-size: 50px;
     line-height: 50px;
-/* identical to box height */
 
+    font-family: 'LAB디지털';
     display: flex;
     align-items: center;
     text-align: center;
-
+    
     color: #6B6B6B;
     border: 1px solid #F2F2F2;
     background: #FFFFFF;
