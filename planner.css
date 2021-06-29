@@ -16,7 +16,6 @@
 =======
 >>>>>>> e190f625e10a763dd6f9545dc4c918bcce411010 */
 
-/* body,  */
 body {
     /* background-color: gray; */
     margin:0px;
@@ -38,23 +37,29 @@ body {
 }
 
 .planner {
-    background-color: white;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     display: flex;
     width: 60vw;
     height: 90vh;
     margin: auto;
     margin-top: 6vh;
     margin-bottom: 4vh;
-    box-shadow: 1px 5px 5px 5px grey;
-    border-radius: 15px;
 }
 .planner-left {
     flex-basis: 50%;
-    border: 1px solid grey;
+    border: 0.5px solid #C9C9C9;
     border-style: none solid none none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px 0 0 10px;
 }
 .planner-right {
     flex-basis: 50%;
+    border: 0.5px solid #C9C9C9;
+    border-style: none none none solid;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 0 10px 10px 0;
 }
 
 #date {
@@ -71,6 +76,7 @@ body {
 }
 .date-real {
     font-size: 20px;
+    font-family: 'S-CoreDream-2ExtraLight';
     color: #6A6A6A;
 }
 
@@ -86,6 +92,11 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'S-CoreDream-2ExtraLight';
+}
+.dday-memo-real:hover {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 .dday-memo-real > p {
     font-size: 12px;
@@ -119,6 +130,15 @@ table tr td:last-child,
 table tr th:last-child {
     border-right: 0;
     width: 80%;
+}
+tbody > tr > td > input {
+    outline:none;
+    width:100%;
+    font-family: 'Bareun_hipi';
+    font-size: 17px;
+}
+tbody > tr > td > input:focus {
+    outline:none;
 }
 
 #time {
