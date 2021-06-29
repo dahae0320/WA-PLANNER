@@ -98,8 +98,7 @@
             <img class="setting-img" src="image/settings.png" alt="" width="50px">
         </div>
     </div>
-    <script>
-    </script>
+
     <script>
         var count = 2021;
         var countEl = document.getElementById("count");
@@ -108,28 +107,56 @@
             countEl.value = count;
         }
         function minus(){
-        if (count > 1) {
-            count--;
-            countEl.value = count;
-        }  
+          if (count > 1) {
+              count--;
+              countEl.value = count;
+          }  
         }
-    </script>
-    <script>
-    function generateTodo(table) {
-        for (let i = 0; i < 10; i++) {
-            let row = table.insertRow();
-            for (let j = 0; j < 2; j++) {
-                let cell = row.insertCell();
-                let text = document.createTextNode("안녕하세요");
-                cell.appendChild(text);
+
+        // 현재 날짜 출력 (DATE)
+        function getDate() {
+            const today = new Date();
+            let year = today.getFullYear();
+            let month = today.getMonth() + 1;  // 0~11을 출력하기 때문에 1을 더해준다.
+            let day = today.getDate();
+
+            if (Number(month) < 10) {   // month가 한자리수 일때,
+                month = '0' + month;   // 십의 자리를 0으로 표기한다.
+            }
+
+            const date = year + '.' + month + '.' + day;
+            document.querySelector('.date-real').textContent = date;
+        }
+
+        // 할일 테이블 출력 (TODO)
+        function generateTodoTable(table) {
+            for (let i = 0; i < 15; i++) {
+                let row = table.insertRow();
+                for (let j = 0; j < 2; j++) {
+                    let cell = row.insertCell();
+                    let text;
+                    if (j == 0) {
+                        text = document.createTextNode("+");
+                    } else {
+                        // text = document.createTextNode("+ 이곳에 할 일을 추가하세요");
+                        text = document.createElement('input');
+                        text.style.border = "none";
+                    }
+                    cell.appendChild(text);
+                }
             }
         }
-    }
-    let table = document.querySelector('table');
-    generateTodo(table);
+
+        function createTodo() {
+            
+        }
+
+        let table = document.querySelector('table');
+        generateTodoTable(table);
+        getDate();
     </script>
-    <script src = "timer.js"></script>
-    <script type="text/javascript" src="planner.js"></script>
+    <script src="timer.js"></script>
+    <script src="planner.js"></script>
     <script src="draggable.js"></script>
 </body>
 
