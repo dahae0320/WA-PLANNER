@@ -139,8 +139,15 @@ tbody > tr > td > input:focus {
 
 #time {
     /* margin: 20% 0px 0px 7%; */
-    margin: 10vh 0px 0px 3vh;
+    margin: 7vh 0px 0px 3vh;
     font-weight: lighter;
+}
+.time-title
+{
+    font-size: 12px;
+    margin-right: 8px;
+    color:#7E7E7E;
+    font-weight: normal;
 }
 .time-real {
     font-size: 30px;
@@ -149,14 +156,18 @@ tbody > tr > td > input:focus {
 #timetable {
     margin: 2vh 0px 0px 0.5vh;
     /* margin: 4% 0px 0px 1%; */
-    height: 80%;
+    height: 88%;
     font-weight: lighter;
 }
 
 .timetable-title > p
 {
     margin-bottom: 1%;
-    margin-left: 6%;
+    margin-left: 6%; 
+    font-size: 12px;
+    margin-right: 8px;
+    color:#7E7E7E;
+    font-weight: normal;
 }
 
 .timetable-layout
