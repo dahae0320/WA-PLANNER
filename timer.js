@@ -29,16 +29,40 @@ function timeToString(time) {
 
   return `${formattedHH}:${formattedMM}:${formattedSS}`;
 }
+function timeToStringReal(time) {
+  let diffInHrs = time / 3600000;  //시간
+  let hh = Math.floor(diffInHrs);
 
+  let diffInMin = (diffInHrs - hh) * 60; //분
+  let mm = Math.floor(diffInMin);
+
+  let diffInSec = (diffInMin - mm) * 60; //초
+  let ss = Math.floor(diffInSec);
+
+  // ms단위를 구현하려면 Line 13,14,20 주석 해제후 start 함수의 setinterval의 마지막 파라미터를 10으로 바꿈
+  // let diffInMs = (diffInSec - ss) * 100; 
+  // let ms = Math.floor(diffInMs);
+
+  
+  let formattedHH = hh.toString().padStart(2, "0"); 
+  let formattedMM = mm.toString().padStart(2, "0");
+  let formattedSS = ss.toString().padStart(2, "0");
+  // let formattedMS = ms.toString().padStart(2, "0");
+
+  return `${formattedHH}H ${formattedMM}M ${formattedSS}S`;
+}
 
 
 let startTime;
 let elapsedTime = 0;
+let realTime = 0;
 let timerInterval;
+let timerIntervalReal; //타임테이블 위의 누적시간
 
 // 리셋 & 종료후 버튼을 초기상태로 돌려놓는 함수입니다.
 function init(){
   clearInterval(timerInterval);
+  
   print("00:00:00");
   elapsedTime = 0;
   stopButton.style.display="none";
@@ -52,6 +76,9 @@ function init(){
 function print(txt) {
   document.getElementById("display").innerHTML = txt;
 }
+function printReal(txt) {
+  document.getElementById("time-real").innerHTML = txt;
+}
 
 //시작버튼 클릭시 이벤트함수
 function start() {
@@ -59,6 +86,10 @@ function start() {
   timerInterval = setInterval(function printTime() {
     elapsedTime = Date.now() - startTime;
     print(timeToString(elapsedTime));
+  }, 10);
+  timerIntervalReal = setInterval(function printTime() {
+    elapsedTime = Date.now() - startTime;
+    printReal(timeToStringReal(elapsedTime));
   }, 10);
   // showButton("PAUSE");
   stopButton.style.display="block";
@@ -70,6 +101,7 @@ function start() {
 // 일시정지버튼 클릭시 이벤트함수
 function pause() {
   clearInterval(timerInterval);
+  clearInterval(timerIntervalReal);
   startButton.style.width = "10vw";
   startButton.style.borderRadius="10vw 0px 0px 10vw"
   pauseButton.style.display="none";
@@ -79,6 +111,7 @@ function pause() {
 
 // 종료버튼 클릭시 이벤트함수
 function stop(){
+  
   init();
   //최종 시간 타임테이블로 전달 함수
 }
