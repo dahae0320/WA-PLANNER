@@ -17,7 +17,7 @@ function timeToString(time) {
   let diffInSec = (diffInMin - mm) * 60; //초
   let ss = Math.floor(diffInSec);
 
-  // ms단위를 구현하려면 Line 13,14,20 주석 해제후 start 함수의 setinterval의 마지막 파라미터를 10으로 바꿈
+  // ms단위를 구현하려면 아래 두줄 주석 해제후 start 함수의 setinterval의 마지막 파라미터를 10으로 바꿈
   // let diffInMs = (diffInSec - ss) * 100; 
   // let ms = Math.floor(diffInMs);
 
@@ -62,7 +62,6 @@ let timerIntervalReal; //타임테이블 위의 누적시간
 // 리셋 & 종료후 버튼을 초기상태로 돌려놓는 함수입니다.
 function init(){
   clearInterval(timerInterval);
-  
   print("00:00:00");
   elapsedTime = 0;
   stopButton.style.display="none";
@@ -75,23 +74,21 @@ function init(){
 // 버튼아래있는 display 출력 함수
 function print(txt) {
   document.getElementById("display").innerHTML = txt;
+  
 }
-function printReal(txt) {
+function printreal(txt){
   document.getElementById("time-real").innerHTML = txt;
 }
+
 
 //시작버튼 클릭시 이벤트함수
 function start() {
   startTime = Date.now() - elapsedTime;
   timerInterval = setInterval(function printTime() {
-    elapsedTime = Date.now() - startTime;
-    print(timeToString(elapsedTime));
-  }, 10);
-  timerIntervalReal = setInterval(function printTime() {
-    elapsedTime = Date.now() - startTime;
-    printReal(timeToStringReal(elapsedTime));
-  }, 10);
-  // showButton("PAUSE");
+    elapsedTime = Date.now() - startTime; realTime = elapsedTime;
+    print(timeToString(elapsedTime));printreal(timeToStringReal(realTime));
+  },10);
+   
   stopButton.style.display="block";
   pauseButton.style.display="block";
   startButton.style.display = "none";
@@ -101,19 +98,18 @@ function start() {
 // 일시정지버튼 클릭시 이벤트함수
 function pause() {
   clearInterval(timerInterval);
-  clearInterval(timerIntervalReal);
+  // clearInterval(timerIntervalReal);
   startButton.style.width = "10vw";
   startButton.style.borderRadius="10vw 0px 0px 10vw"
   pauseButton.style.display="none";
   startButton.style.display = "block";
-  // showButton("PLAY");
+  
 }
 
 // 종료버튼 클릭시 이벤트함수
 function stop(){
-  
   init();
-  //최종 시간 타임테이블로 전달 함수
+  //공부 시간 타임테이블로 전달
 }
 
 // 리셋버튼 클릭시 이벤트함수

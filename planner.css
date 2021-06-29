@@ -10,11 +10,7 @@
     font-weight: normal;
     font-style: normal;
 }
-/* <<<<<<< HEAD
 
-
-=======
->>>>>>> e190f625e10a763dd6f9545dc4c918bcce411010 */
 
 /* body,  */
 body {
@@ -221,11 +217,8 @@ table tr th:last-child {
     background: #FFFFFF;
     border: 1px solid #F2F2F2;
     box-sizing: border-box;
-
-    width: 207px;
-    height: 207px;
+  
     background-color: #FFFFFF; 
-
     border-radius: 50%;
     font-family: Arial;
     font-style: normal;
@@ -235,45 +228,36 @@ table tr th:last-child {
     display: flex;
     align-items: center;
     text-align: center;
-
     color: #616161;
-    
     float:left;
     margin-top: 30%;
 
 }
 
 #btn-start {
-
-    font-family: 'Bareun_hipi';
-font-style: normal;
-font-weight: bold;
-font-size: 35px;
-line-height: 40px;
-display: flex;
-align-items: center;
-text-align: center;
-
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
     display: block;
     border-radius: 50%;
     margin-left : 15%;
     
   }
 #btn-pause{
-    
     display: none;
     width: 10vw;
     border-radius: 10vw 0px 0px 10vw;
-    margin-left : 15%;
-    
+    margin-left : 15%;   
 }
 
 #btn-stop{
     display: none;
     width: 10vw;
     border-radius: 0px 10vw 10vw 0px;
-    
-
 }
 
 
@@ -281,7 +265,6 @@ text-align: center;
     width: 20px;
     height: 20px;
     background-color: red;
-    
 }
 
 #display{
