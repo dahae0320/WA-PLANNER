@@ -9,6 +9,33 @@
 </head>
 <body>
     <div class="container">
+        <div class="__dial">
+            <label for="dial-btn-open"  class="d-b-o" onclick=""><img class="dial-btn-image" src="image/calendar.png" alt="" width="20px"></label>
+            <input type="checkbox" id="dial-btn-open">
+            <div class="__calendar">
+                <div class="calendar">
+                    <div id="exit">
+                        <label for="dial-btn-open"  class="exit" onclick=""><img src="image/exit.png" alt="" width="20px"></label>
+                        <input type="checkbox" id="dial-btn-open">
+                    </div>
+                    <div id="cal-btn">
+                            <img src="image/tri.png" class='cal-btn-left' alt="" id="moins" onclick="minus()" width="20px">
+                            <input type="text" size="5" value="2021" id="count" readonly>
+                            <img src="image/tri.png" class="cal-btn-right" alt="" id="plus" onclick="plus()" width="20px">
+                            <label for="cal-btn-year" onclick=""><img class='nemo' src="image/nemo.png" alt="" width="60px" height="30px"></label>
+                            <input type="checkbox" id="cal-btn-year">
+                            <div class="__total-cal" id="__total-cal">
+                                <div class="total-cal"></div>
+                            </div>
+                    </div>
+                    <div id="cal-dial">
+                        <div class="cal-dial-left">1</div>
+                        <div class="cal-dial-line">2</div>
+                        <div class="cal-dial-right">3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="__planner">
             <div class="planner">
                 <div class="planner-left">
@@ -60,8 +87,32 @@
                 <span class="watch-face" id = "display">00:00:00</span>
             </div>
         </div>
+        <div class="__righttop">
+            <div id="rt-page"> 
+                <a href="" class="">로그인</a><br>
+                <a href="">마이페이지</a><br>
+                <a href="">와플마당</a>
+            </div>
+        </div>
+        <div class="__setting">
+            <img class="setting-img" src="image/settings.png" alt="" width="50px">
+        </div>
     </div>
+
     <script>
+        var count = 2021;
+        var countEl = document.getElementById("count");
+        function plus(){
+            count++;
+            countEl.value = count;
+        }
+        function minus(){
+          if (count > 1) {
+              count--;
+              countEl.value = count;
+          }  
+        }
+
         // 현재 날짜 출력 (DATE)
         function getDate() {
             const today = new Date();
@@ -104,7 +155,9 @@
         generateTodoTable(table);
         getDate();
     </script>
-    <script src = "timer.js"></script>
-    <script type="text/javascript" src="planner.js"></script>
+    <script src="timer.js"></script>
+    <script src="planner.js"></script>
+    <script src="draggable.js"></script>
 </body>
+
 </html>
