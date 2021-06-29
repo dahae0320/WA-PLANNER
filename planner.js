@@ -95,14 +95,14 @@ timetable.addEventListener("mousemove", function(event) {
     //클릭 끝 == 드래그 종료 시
     window.onmouseup = function(){mouseFlag = false; mouseCnt = 0; mouseIsPass = new Array();}
 
-    console.log(mouseIsPass);
-    //현재 객체가 li이고, mousedown상태이며, mousedown시 부모와 현재 부모가 같을 때만 색칠
-
+    //현재 객체가 li이고, mousedown상태이며, mousedown시 부모와 현재 부모가 같을 때
     if(mouseIsOverNow.tagName == "LI" && mouseFlag == true && mouseIsOverNowName == mouseIsOverParentName){
+        //마우스 드래그 범위 내의 객체를 모두 배열에 넣음
         for(let i = mouseDownFirstX; i < x; i++){       //조정 필요
             var mouseIsOverNow = document.elementFromPoint(i, y);
             mouseIsPass.push(mouseIsOverNow);
         }
+        //배열에 담겨진 걸 전부 다시 칠함
         for(let i = 0; i < mouseIsPass.length; i++){
             mouseIsPass[i].style.backgroundColor= blockColor[colorCnt % 6]; 
             // mouseIsOverNow.style.backgroundColor= blockColor[colorCnt % 6];   
