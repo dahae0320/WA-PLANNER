@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'Bareun_hipi';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bareun_hipi.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-2ExtraLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LAB디지털';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    margin: 0px;
+    background-image: url(image/back.jpeg);
+    background-size: 100%;
+}
+.contents{
+    display: flex;
+    flex-direction: column;
+}
+.__corner{
+    display: flex;
+    flex-direction: row-reverse;
+    flex:1;
+}
+.corner{
+    flex-direction: column;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 30px;
+
+    display: flex;
+    margin-right: 30px;
+    margin-top: 30px;
+
+    height: 60px;
+    width: 170px;
+    align-items: center;
+    text-align: center;
+    border-right: 0.7px solid #B5B5B5;;
+    color: #949494;
+}
+.__top{
+    display: flex;
+    flex-direction: row-reverse;
+    margin:50px auto;
+    flex: 1;
+    width: 85vw;
+    border-bottom: 0.7px solid #B5B5B5;
+}
+#top{
+    display: flex;
+    width: 200px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #949494;
+}
+.top-new-sort{
+    flex: 1;
+    margin-bottom: 10px;
+}
+.top-love-sort{
+    flex: 1;
+    margin-bottom: 10px;
+}
+.__post{
+    flex: 5;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80vw;
+    margin: 0 auto;
+}
+#post{
+    width: 274px;
+    height: 305px;
+    left: 122px;
+    top: 150px;
+    margin: 2vh 1vw ;
+
+    background: #FFFFFF;
+    box-shadow: 2px 2px 10px rgba(214, 214, 214, 0.7);
+    border-radius: 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+}
+.post-img{
+    width: 96%;
+    margin: 5% 2%;
+}
+.__post-profile{
+    display: flex;
+}
+#post-profile{
+    flex:1;
+    margin-left: 5%;
+    margin-top: 1%;
+    display: flex;
+}
+.post-profile-img{
+    flex: 1;
+}
+.pro-img{
+    width: 20px;
+    margin-left: 10px;
+}
+.post-profile-name{
+    flex: 2;
+}
+#love{
+    flex:1;
+    margin-right: 5%;
+    margin-top: 1%;
+    display: flex;
+}
+.love-num{
+    text-align: right;
+    margin-right: 10px;
+    flex:2;
+}
+.love-img{
+    flex:1;
+    margin-right: 5%;
+}
+.heart{
+    width:20px;
+}
