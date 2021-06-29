@@ -62,8 +62,7 @@ for (let i = 0; i < 24; i++)
 // 3. 마우스 빠르게 움직이면 띄엄띄엄되는거 해결해야함. => 완료
 // 4. 시간 숫자랑 격자 줄이랑 잘 안맞음. -> ul 앞에 숫자 추가하는 걸로 바꾸기? => 완료
 // 5. 칠할 때 ul 위쪽 border가 먹힘.
-// 6. 스크린 넓이 .. 가져와서 step 계산하기 or 이전 요소랑 비교해 같으면 추가 아니면 pass
-// 7. 코드 함수화 해서 정리하기
+// 6. 스크린 넓이 .. 가져와서 step 계산하기 or 이전 요소랑 비교해 같으면 추가 아니면 pass => 완료
 //--------------------------------------------------------------------------------//
 
 const blockColor = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];  // 나중에 사용자 지정 색 받아오기.
@@ -98,10 +97,21 @@ timetable.addEventListener("mousemove", function(event) {
     //현재 객체가 li이고, mousedown상태이며, mousedown시 부모와 현재 부모가 같을 때
     if(mouseIsOverNow.tagName == "LI" && mouseFlag == true && mouseIsOverNowName == mouseIsOverParentName){
         //마우스 드래그 범위 내의 객체를 모두 배열에 넣음
-        for(let i = mouseDownFirstX; i < x; i++){       //조정 필요
+        for(let i = mouseDownFirstX; i < x; i++){
             var mouseIsOverNow = document.elementFromPoint(i, y);
-            mouseIsPass.push(mouseIsOverNow);
+            if(i == mouseDownFirstX){
+                mouseIsPass.push(mouseIsOverNow);
+            }
+            //객체가 중복으로 들어가는 것 방지
+            else
+            {
+                if($(mouseIsPass[i-1])[0] != $(mouseIsOverNow)[0])
+                {
+                    mouseIsPass.push(mouseIsOverNow);
+                }
+            }
         }
+        console.log($(mouseIsOverNow)[0]);
         //배열에 담겨진 걸 전부 다시 칠함
         for(let i = 0; i < mouseIsPass.length; i++){
             mouseIsPass[i].style.backgroundColor= blockColor[colorCnt % 6]; 
