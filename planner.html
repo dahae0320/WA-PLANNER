@@ -135,11 +135,16 @@
                 let row = table.insertRow();
                 for (let j = 0; j < 2; j++) {
                     let cell = row.insertCell();
-                    let text, initText;
+                    let text, initText, colorPicker;
                     if (j == 0) {
                         text = document.createElement('input');
                         text.style.border = "none";
                         text.name = i + '.' + j;
+
+                        // colorPicker = document.createElement('input');
+                        // colorPicker.type = "color";
+
+                        // cell.appendChild(colorPicker);
                     } else {
                         text = document.createElement('input');
                         text.style.border = "none";
@@ -154,7 +159,7 @@
             }
         }
 
-        function createTodo() {
+        function createTodoColor() {
             
         }
 
