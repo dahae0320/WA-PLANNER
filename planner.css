@@ -453,7 +453,7 @@ a:hover {
     border-radius: 10px;
 }
 
-.__highlight
+.__highlighter
 {
     display:flex;
     position: fixed;
@@ -464,9 +464,17 @@ a:hover {
     
 }
 
-.__highlight > div
+.__highlighter > div
 {
     height: 30vh;
     margin-left: 1vw;
     margin-top: 10vh;
+}
+
+.color-pen-4-pick, .color-pen-3-pick, .color-pen-2-pick, .color-pen-1-pick
+{
+    opacity: 0%;
+    width: 0%;
+    height: 0%;
+    position: absolute;
 }

@@ -1,3 +1,5 @@
+
+
 //--------------------------------긁어온 포매팅 함수...(🚰·̫🚰)--------------------------------//
 function format() { var args = Array.prototype.slice.call (arguments, 1); 
     return arguments[0].replace (/\{(\d+)\}/g, function (match, index) { return args[index]; }); }
@@ -73,6 +75,7 @@ var mouseIsOverParentName = ""; //undefined 방지하기위해 자료형 정해�
 var colorCnt = -1;
 var mouseIsPass = new Array();
 var mouseDownFirstX;
+var paintColor ="blue";
 
 //마우스가 움직일 때마다 현재 마우스 좌표에 있는 element를 가져옴.
 timetable.addEventListener("mousemove", function(event) {
@@ -111,18 +114,19 @@ timetable.addEventListener("mousemove", function(event) {
                 }
             }
         }
-        console.log($(mouseIsOverNow)[0]);
+        // console.log($(mouseIsOverNow)[0]);
         //배열에 담겨진 걸 전부 다시 칠함
         for(let i = 0; i < mouseIsPass.length; i++){
-            mouseIsPass[i].style.backgroundColor= blockColor[colorCnt % 6]; 
+            mouseIsPass[i].style.backgroundColor= paintColor; //펜 업기능 아직.
         }
     }
 });
 
 //--------------------------------Highlight pen--------------------------------//
-//--------------------------------------------------------------------------------//
+//------------------------------------제이쿼리 짱...(߹ө߹) --------------------------------------------//
 
 var penCnt = 0;
+var penColorNow = "";
 function penInit(){
     $('.color-pen-1').hide();
     $('.color-pen-2').hide();
@@ -130,6 +134,7 @@ function penInit(){
     $('.color-pen-4').hide();
 }
 
+//최대 4개 펜 생성
 function createNewPen(){
     penCnt ++;
     switch(penCnt){
@@ -152,9 +157,48 @@ function createNewPen(){
     }
 }
 
+function saveNowColor(){
+   penColorNow = $(".color-pen-1-pick").val();
+   paintColor = penColorNow;
+   console.log(penColorNow);
+}
+
+//펜 클릭 이벤트
+var isUpPen1 = false;
+var isColorWindow = true;
+$(".color-pen-1").on('click', function(){
+    if(isUpPen1 == false){
+        paintColor = penColorNow
+        $(".color-pen-1").css('margin-top', '5vh');
+        isUpPen1 = true;
+    }
+    else
+    {
+        paintColor = 'white' //나중에 칠 아예 안되게 처리
+        $(".color-pen-1").css('margin-top', '10vh');
+        isUpPen1 = false;
+    }
+})
+
+$(".color-pen-1").on('dblclick', function(){
+    $(".color-pen-1-pick").trigger('click');
+});
+
+penInit();
+
+
+//클릭하면 펜 생성
 $('.dotted-pen').on('click', function(){
     createNewPen();
     console.log(penCnt);
-}); //나중에 펜 객체로 변경
+});
 
-penInit();
+//마우스 올릴때만 나타나기
+$('.dotted-pen').on('mouseover', function(){
+    $('.dotted-pen').css('opacity', '100%');
+});
+$('.dotted-pen').on('mouseleave', function(){
+    $('.dotted-pen').css('opacity', '0%');
+});
+
+

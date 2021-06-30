@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery load -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <title>WA!PLANNER</title>
     <link rel="stylesheet" type="text/css" href="planner.css">
@@ -95,8 +96,9 @@
                 <a href="">와플마당</a>
             </div>
         </div>
-        <div class="__highlight">
+        <div class="__highlighter">
             <div class="color-pen-4">
+                <input type="color" class="color-pen-4-pick">
                 <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_i)">
                     <rect x="1" y="42" width="31" height="167" fill="white"/>
@@ -111,6 +113,7 @@
                 </svg> 
             </div>
             <div class="color-pen-3">
+                <input type="color" class="color-pen-3-pick">
                 <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_i)">
                     <rect x="1" y="42" width="31" height="167" fill="white"/>
@@ -125,6 +128,7 @@
                 </svg> 
             </div>
             <div class="color-pen-2">
+                <input type="color" class="color-pen-2-pick" value="color-pick-2">
                 <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_i)">
                     <rect x="1" y="42" width="31" height="167" fill="white"/>
@@ -139,6 +143,7 @@
                 </svg>                   
             </div>
             <div class="color-pen-1">
+                <input type="color" class="color-pen-1-pick" onchange="saveNowColor()">
                 <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_i)">
                     <rect x="1" y="42" width="31" height="167" fill="white"/>
