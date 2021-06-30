@@ -91,7 +91,7 @@
         </div>
         <div class="__righttop">
             <div id="rt-page"> 
-                <a href="" class="">로그인</a><br>
+                <a href="" class="" id="">로그인</a><br>
                 <a href="">마이페이지</a><br>
                 <a href="">와플마당</a>
             </div>
@@ -230,20 +230,31 @@
                 let row = table.insertRow();
                 for (let j = 0; j < 2; j++) {
                     let cell = row.insertCell();
-                    let text;
+                    let text, initText, colorPicker;
                     if (j == 0) {
-                        text = document.createTextNode("+");
-                    } else {
-                        // text = document.createTextNode("+ 이곳에 할 일을 추가하세요");
                         text = document.createElement('input');
                         text.style.border = "none";
+                        text.name = i + '.' + j;
+
+                        // colorPicker = document.createElement('input');
+                        // colorPicker.type = "color";
+
+                        // cell.appendChild(colorPicker);
+                    } else {
+                        text = document.createElement('input');
+                        text.style.border = "none";
+                        text.name = i + '.' + j;
+                    }
+                    if (i == 0 && j == 1) {
+                        text.placeholder = "+ 이곳에 할 일을 입력하세요";
+                        text.name = i + '.' + j;
                     }
                     cell.appendChild(text);
                 }
             }
         }
 
-        function createTodo() {
+        function createTodoColor() {
             
         }
 
