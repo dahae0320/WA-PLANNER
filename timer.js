@@ -2,9 +2,9 @@
 // 1. 시작,일시정지,종료,초기화 구현 = 완료
 // 2. 시작버튼 눌렀을때 시작버튼 사라지고 일시정지버튼 남음 = 완료
 // 3. 일시정지버튼 눌렀을때 일시정지 버튼 사라지고 시작버튼 남음 = 완료
-// 4. 일시정지 눌렀을때 왼쪽반원 시작, 오른쪽반원 종료 버튼 구현
-// 5. 일시정지 시간 기록, 타임테이블에 넘겨줄 데이터 +함수 구현
-// 6. 피그마처럼 꾸미기(위치 색깔, 그림자)
+// 4. 일시정지 눌렀을때 왼쪽반원 시작, 오른쪽반원 종료 버튼 구현 = 완료
+// 5. 일시정지 시간 기록, 타임테이블에 넘겨줄 데이터 +함수 구현 
+// 6. 피그마처럼 꾸미기(위치 색깔, 그림자) = 완료
 
 // START 후 초단위의 시간을 시간:분:초 형태의 텍스트로 형변환 하는 함수
 function timeToString(time) {
@@ -76,6 +76,7 @@ function print(txt) {
   document.getElementById("display").innerHTML = txt;
   
 }
+// 오른쪽 타임테이블 위 누적 학습시간 출력 함수
 function printreal(txt){
   document.getElementById("time-real").innerHTML = txt;
 }
@@ -88,7 +89,7 @@ function start() {
     elapsedTime = Date.now() - startTime; realTime = elapsedTime;
     print(timeToString(elapsedTime));printreal(timeToStringReal(realTime));
   },10);
-   
+  stopButton.style.boxShadow="0px 10px 3px rgba(0, 0, 0, 0.07) inset";
   stopButton.style.display="block";
   pauseButton.style.display="block";
   startButton.style.display = "none";
@@ -101,6 +102,7 @@ function pause() {
   // clearInterval(timerIntervalReal);
   startButton.style.width = "10vw";
   startButton.style.borderRadius="10vw 0px 0px 10vw"
+  stopButton.style.boxShadow="10px 10px 3px rgba(0, 0, 0, 0.07) inset";
   pauseButton.style.display="none";
   startButton.style.display = "block";
   
@@ -117,14 +119,8 @@ function reset() {
 
   init();
 }
+// 버튼 클릭시 그림자 변경
 
-
-// function showButton(buttonKey) {
-//   const buttonToShow = buttonKey === "PLAY" ? startButton : pauseButton;
-//   const buttonToHide = buttonKey === "PLAY" ? pauseButton : startButton;
-//   buttonToShow.style.display = "block";
-//   buttonToHide.style.display = "none";
-// }
 
 let startButton = document.getElementById("btn-start");
 let pauseButton = document.getElementById("btn-pause");

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery load -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <title>WA!PLANNER</title>
     <link rel="stylesheet" type="text/css" href="planner.css">
@@ -69,10 +70,6 @@
                             <p>TIMETABLE<p></p>
                         </div>
                         <div class="timetable-layout">
-                            <!-- <div class="timetable-number">
-                                5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>1<br>2<br>3<br>4<br>5<br>
-                                6<br>7<br>8<br>9<br>10<br>11<br>12<br>1<br>2<br>3<br>4
-                            </div> -->
                             <div class="timetable-matrix"></div>
                          </div>
                     </div>
@@ -94,6 +91,100 @@
                 <a href="">마이페이지</a><br>
                 <a href="waf-madang.html">와플마당</a>
             </div>
+        </div>
+        <div class="__highlighter">
+            <div class="color-pen-4">
+                <input type="color" class="color-pen-4-pick">
+                <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_i)">
+                    <rect x="1" y="42" width="31" height="167" fill="white"/>
+                    </g>
+                    <rect x="1.5" y="42.5" width="30" height="166" stroke="#A7A7A7"/>
+                    <g filter="url(#filter1_i)">
+                    <rect y="67" width="63" height="33" rx="5" transform="rotate(-90 0 67)" fill="white"/>
+                    </g>
+                    <rect x="0.5" y="66.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 66.5)" stroke="#A7A7A7"/>
+                    <rect x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
+                    <rect x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
+                </svg> 
+            </div>
+            <div class="color-pen-3">
+                <input type="color" class="color-pen-3-pick">
+                <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_i)">
+                    <rect x="1" y="42" width="31" height="167" fill="white"/>
+                    </g>
+                    <rect x="1.5" y="42.5" width="30" height="166" stroke="#A7A7A7"/>
+                    <g filter="url(#filter1_i)">
+                    <rect y="67" width="63" height="33" rx="5" transform="rotate(-90 0 67)" fill="white"/>
+                    </g>
+                    <rect x="0.5" y="66.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 66.5)" stroke="#A7A7A7"/>
+                    <rect x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
+                    <rect x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
+                </svg> 
+            </div>
+            <div class="color-pen-2">
+                <input type="color" class="color-pen-2-pick" value="color-pick-2">
+                <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_i)">
+                    <rect x="1" y="42" width="31" height="167" fill="white"/>
+                    </g>
+                    <rect x="1.5" y="42.5" width="30" height="166" stroke="#A7A7A7"/>
+                    <g filter="url(#filter1_i)">
+                    <rect y="67" width="63" height="33" rx="5" transform="rotate(-90 0 67)" fill="white"/>
+                    </g>
+                    <rect x="0.5" y="66.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 66.5)" stroke="#A7A7A7"/>
+                    <rect x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
+                    <rect x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
+                </svg>                   
+            </div>
+            <div class="color-pen-1">
+                <input type="color" class="color-pen-1-pick" onchange="saveNowColor()">
+                <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_i)">
+                    <rect x="1" y="42" width="31" height="167" fill="white"/>
+                    </g>
+                    <rect x="1.5" y="42.5" width="30" height="166" stroke="#A7A7A7"/>
+                    <g filter="url(#filter1_i)">
+                    <rect y="67" width="63" height="33" rx="5" transform="rotate(-90 0 67)" fill="white"/>
+                    </g>
+                    <rect x="0.5" y="66.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 66.5)" stroke="#A7A7A7"/>
+                    <rect x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
+                    <rect x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
+                    <defs>
+                    <filter id="filter0_i" x="0" y="42" width="32" height="168" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset dx="-10" dy="30"/>
+                    <feGaussianBlur stdDeviation="0.5"/>
+                    <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+                    <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+                    </filter>
+                    <filter id="filter1_i" x="-1" y="4" width="34" height="63" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset dx="-5"/>
+                    <feGaussianBlur stdDeviation="0.5"/>
+                    <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+                    <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+                    </filter>
+                    </defs>
+                    </svg>                    
+                </div>
+            <div class="dotted-pen">
+                <svg width="33" height="161" viewBox="0 0 33 161" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1.5" y="65.5" width="30" height="278" stroke="#A7A7A7" stroke-dasharray="2 2"/>
+                    <rect x="0.5" y="65.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 65.5)" stroke="#A7A7A7" stroke-dasharray="2 2"/>
+                    <rect x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7" stroke-dasharray="2 2"/>
+                    <rect x="17.5" y="3.5" width="7" height="42" stroke="#A7A7A7" stroke-dasharray="2 2"/>
+                    <path d="M15.0039 115.223V110.512H10.3281V108.543H15.0039V103.867H16.9961V108.543H21.6719V110.512H16.9961V115.223H15.0039Z" fill="#D3D3D3"/>
+                </svg>                                      
+            </div>
+                
         </div>
         <div class="__setting">
             <img class="setting-img" src="image/settings.png" alt="" width="50px">
@@ -135,20 +226,31 @@
                 let row = table.insertRow();
                 for (let j = 0; j < 2; j++) {
                     let cell = row.insertCell();
-                    let text;
+                    let text, initText, colorPicker;
                     if (j == 0) {
-                        text = document.createTextNode("+");
-                    } else {
-                        // text = document.createTextNode("+ 이곳에 할 일을 추가하세요");
                         text = document.createElement('input');
                         text.style.border = "none";
+                        text.name = i + '.' + j;
+
+                        // colorPicker = document.createElement('input');
+                        // colorPicker.type = "color";
+
+                        // cell.appendChild(colorPicker);
+                    } else {
+                        text = document.createElement('input');
+                        text.style.border = "none";
+                        text.name = i + '.' + j;
+                    }
+                    if (i == 0 && j == 1) {
+                        text.placeholder = "+ 이곳에 할 일을 입력하세요";
+                        text.name = i + '.' + j;
                     }
                     cell.appendChild(text);
                 }
             }
         }
 
-        function createTodo() {
+        function createTodoColor() {
             
         }
 
