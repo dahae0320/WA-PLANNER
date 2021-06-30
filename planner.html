@@ -135,13 +135,19 @@
                 let row = table.insertRow();
                 for (let j = 0; j < 2; j++) {
                     let cell = row.insertCell();
-                    let text;
+                    let text, initText;
                     if (j == 0) {
-                        text = document.createTextNode("+");
-                    } else {
-                        // text = document.createTextNode("+ 이곳에 할 일을 추가하세요");
                         text = document.createElement('input');
                         text.style.border = "none";
+                        text.name = i + '.' + j;
+                    } else {
+                        text = document.createElement('input');
+                        text.style.border = "none";
+                        text.name = i + '.' + j;
+                    }
+                    if (i == 0 && j == 1) {
+                        text.placeholder = "+ 이곳에 할 일을 입력하세요";
+                        text.name = i + '.' + j;
                     }
                     cell.appendChild(text);
                 }
