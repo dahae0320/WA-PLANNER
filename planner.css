@@ -19,23 +19,18 @@
 }
 
 body {
-    /* background-color: gray; */
     margin:0px;
     background-image: url('/image/back.jpeg');
 }
 .container {
     display: flex;
 }
-.__planner, .__stopwatch {
-    /* background-color: yellowgreen; */
-}
+
 .__planner {
     flex-basis: 70%;
 }
 .__stopwatch {
     flex-basis: 30%;
-    /* border: 1px red solid; */
-    
 }
 
 .planner {
@@ -187,14 +182,6 @@ tbody > tr > td > input:focus {
     line-height: 140%;
     display: flex;
 }
-
-/* .timetable-number
-{
-    text-align: right;
-    font-size: 70%;
-    line-height: 1.8;
-    width: 10%;
-} */
 
 .timetable-matrix
 {
@@ -459,3 +446,28 @@ a:hover {
     background-color: red;
 }
 
+.__highlighter
+{
+    display:flex;
+    position: fixed;
+    left: 70vw;
+    top: 70vh;
+    width: 25vw;
+    height: 30vh;
+    
+}
+
+.__highlighter > div
+{
+    height: 30vh;
+    margin-left: 1vw;
+    margin-top: 10vh;
+}
+
+.color-pen-4-pick, .color-pen-3-pick, .color-pen-2-pick, .color-pen-1-pick
+{
+    opacity: 0%;
+    width: 0%;
+    height: 0%;
+    position: absolute;
+}
