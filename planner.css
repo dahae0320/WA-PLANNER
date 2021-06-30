@@ -249,8 +249,8 @@ tbody > tr > td > input:focus {
     
     width: 20vw;
     height: 20vw;
-    /* left: 90%;
-    top: 15%; */
+    left: 90%;
+    top: 15%;
     background: #FFFFFF;
     border: 1px solid #F2F2F2;
     box-sizing: border-box;
@@ -282,6 +282,7 @@ tbody > tr > td > input:focus {
     display: block;
     border-radius: 50%;
     margin-left : 15%;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.07);
     
   }
 #btn-pause{
@@ -289,7 +290,7 @@ tbody > tr > td > input:focus {
     width: 10vw;
     border-radius: 10vw 0px 0px 10vw;
     margin-left : 15%;   
-    
+    box-shadow: inset 10px 10px 3px rgba(0, 0, 0, 0.07);
 }
 
 #btn-stop{
@@ -297,6 +298,36 @@ tbody > tr > td > input:focus {
     display: none;
     width: 10vw;
     border-radius: 0px 10vw 10vw 0px;
+    box-shadow: inset 0px 10px 3px rgba(0, 0, 0, 0.07);
+}
+
+#display{
+    /* position : absolute; */
+    width: 20vw;
+    height: 6vw;
+    left : 80%;
+    top : 60%;
+    float: left;
+
+    margin-top : 15%;
+    margin-left : 15%;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 50px;
+
+    font-family: 'LAB디지털';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    color: #6B6B6B;
+    border: 1px solid #F2F2F2;
+    background: #FFFFFF;
+    box-shadow: inset 5px 5px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 10px;
 }
 
 .dial-btn-image{
@@ -428,27 +459,3 @@ a:hover {
     background-color: red;
 }
 
-#display{
-    position : absolute;
-    width: 20vw;
-    height: 6vw;
-    left : 75%;
-    top : 60%;
-
-    font-style: normal;
-    font-weight: bold;
-    font-size: 50px;
-    line-height: 50px;
-
-    font-family: 'LAB디지털';
-    display: flex;
-    align-items: center;
-    text-align: center;
-    
-    color: #6B6B6B;
-    border: 1px solid #F2F2F2;
-    background: #FFFFFF;
-    box-shadow: inset 5px 5px 4px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    border-radius: 10px;
-}
