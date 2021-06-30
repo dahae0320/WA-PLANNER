@@ -452,3 +452,21 @@ a:hover {
     box-sizing: border-box;
     border-radius: 10px;
 }
+
+.__highlight
+{
+    display:flex;
+    position: fixed;
+    left: 70vw;
+    top: 70vh;
+    width: 25vw;
+    height: 30vh;
+    
+}
+
+.__highlight > div
+{
+    height: 30vh;
+    margin-left: 1vw;
+    margin-top: 10vh;
+}

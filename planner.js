@@ -115,7 +115,46 @@ timetable.addEventListener("mousemove", function(event) {
         //배열에 담겨진 걸 전부 다시 칠함
         for(let i = 0; i < mouseIsPass.length; i++){
             mouseIsPass[i].style.backgroundColor= blockColor[colorCnt % 6]; 
-            // mouseIsOverNow.style.backgroundColor= blockColor[colorCnt % 6];   
         }
     }
 });
+
+//--------------------------------Highlight pen--------------------------------//
+//--------------------------------------------------------------------------------//
+
+var penCnt = 0;
+function penInit(){
+    $('.color-pen-1').hide();
+    $('.color-pen-2').hide();
+    $('.color-pen-3').hide();
+    $('.color-pen-4').hide();
+}
+
+function createNewPen(){
+    penCnt ++;
+    switch(penCnt){
+    case 0:
+        $(".dotted-pen").show();
+        break;
+    case 1:
+        $('.color-pen-1').show();
+        break;
+    case 2:
+        $('.color-pen-2').show();
+        break;
+    case 3:
+        $('.color-pen-3').show();
+        break;
+    case 4:
+        $('.color-pen-4').show();
+        $(".dotted-pen").hide();
+        break;
+    }
+}
+
+$('.dotted-pen').on('click', function(){
+    createNewPen();
+    console.log(penCnt);
+}); //나중에 펜 객체로 변경
+
+penInit();
