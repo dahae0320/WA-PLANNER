@@ -48,7 +48,7 @@
 
     $.fn.picker = function (json, callback) {
         var options = json.data;
-        var lineHeight = 30;
+        var lineHeight = 30; 
         $ele = $(this);
         $ele.empty();
         $ele.addClass("picker-wrapper");
