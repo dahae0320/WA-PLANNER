@@ -164,9 +164,27 @@ function saveNowColor(){
 }
 
 //펜 클릭 이벤트
-var isUpPen1 = false;
+var isUpPen1 = [false, false, false, false];
+var nowPenObj, nowPenNum;
 var isColorWindow = true;
-$(".color-pen-1").on('click', function(){
+var DELAY = 200, timer = null, clickCnt = 0;
+
+//div중에 class가 color-pen으로 시작하는 객체만 선택
+$("div[class^=color-pen]").on('mouseover', function(){nowPenObj = $(this)[0];console.log(nowPenObj)})
+
+nowPenObj.on('click', function(){
+    clickCnt++; //더블클릭, 클릭 구분
+    switch(clickCnt){
+        case 1:
+            timer = setTimeout(doSingleClick, DELAY);
+            break;
+        case 2:
+            doDoubleClick();
+            break;
+    }
+})
+
+function doSingleClick(){
     if(isUpPen1 == false){
         paintColor = penColorNow
         $(".color-pen-1").css('margin-top', '5vh');
@@ -178,19 +196,20 @@ $(".color-pen-1").on('click', function(){
         $(".color-pen-1").css('margin-top', '10vh');
         isUpPen1 = false;
     }
-})
+    clickCnt = 0;
+}
 
-$(".color-pen-1").on('dblclick', function(){
-    $(".color-pen-1-pick").trigger('click');
-});
+function doDoubleClick(){
+    clearTimeout(timer);
+    $(".color-pen-1-pick").trigger('click');    
+    clickCnt =0;
+}
 
 penInit();
-
 
 //클릭하면 펜 생성
 $('.dotted-pen').on('click', function(){
     createNewPen();
-    console.log(penCnt);
 });
 
 //마우스 올릴때만 나타나기
@@ -201,4 +220,5 @@ $('.dotted-pen').on('mouseleave', function(){
     $('.dotted-pen').css('opacity', '0%');
 });
 
-
+//형광펜 뚜껑 색 변경
+console.log($('svg')[1]);

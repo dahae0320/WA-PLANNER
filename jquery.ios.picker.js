@@ -100,7 +100,7 @@
 
         /*setting css*/
         if (typeof json.lineHeight != "undefined") {
-            $ele.css("height", (lineHeight * 7) + "px");
+            $ele.css("height", (lineHeight * 30) + "px");
             $ele.css("line-height", lineHeight + "px");
             $ele.find('.clone-scroller').css({
                 "padding-top": (lineHeight * 3) + "px",
@@ -127,7 +127,6 @@
                 $option.hide();
             }
         });
-
     };
 }(jQuery));
 
