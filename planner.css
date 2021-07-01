@@ -101,6 +101,9 @@ body {
 }
 
 #todo {
+    margin: 5px 30px 0px 0px;
+}
+.todo-title {
     margin: 5px 30px 0px 30px;
 }
 table {
@@ -112,21 +115,25 @@ table td, table th {
     border:0.7px solid #909090;
     cursor: text;
 }
-table td:hover {
-    color: #9C9C9C;
-}
 table tr:first-child td {
     border-top: 0;
 }
 table tr td:first-child,
 table tr th:first-child {
-    border-left: 0;
-    width: 20%;
+    /* border-left: 0; */
+    /* 이게 왜 되는거지,,ㅡ,,? */
+    width: 30px;
+    border:1px;
+}
+table tr td:nth-child(2),
+table tr th:nth-child(2) {
+    width: 17%;
+    border-left:0;
 }
 table tr td:last-child,
 table tr th:last-child {
     border-right: 0;
-    width: 80%;
+    /* width: 75%; */
 }
 tbody > tr > td > input {
     outline:none;
@@ -136,6 +143,17 @@ tbody > tr > td > input {
 }
 tbody > tr > td > input:focus {
     outline:none;
+}
+/* todo의 colorpicker */
+input[type="color"] {
+	width: 17px;
+	height: 17px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
 }
 
 #time {
