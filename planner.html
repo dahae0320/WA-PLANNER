@@ -227,24 +227,22 @@
         function generateTodoTable(table) {
             for (let i = 0; i < 15; i++) {
                 let row = table.insertRow();
-                for (let j = 0; j < 2; j++) {
+                for (let j = 0; j < 3; j++) {
                     let cell = row.insertCell();
-                    let text, initText, colorPicker;
+                    let text, initText;
                     if (j == 0) {
                         text = document.createElement('input');
+                        text.type = "color";
+                        text.style.display = "none";
                         text.style.border = "none";
+                        text.className = "colorpicker";
                         text.name = i + '.' + j;
-
-                        // colorPicker = document.createElement('input');
-                        // colorPicker.type = "color";
-
-                        // cell.appendChild(colorPicker);
                     } else {
                         text = document.createElement('input');
                         text.style.border = "none";
                         text.name = i + '.' + j;
                     }
-                    if (i == 0 && j == 1) {
+                    if (i == 0 && j == 2) {
                         text.placeholder = "+ 이곳에 할 일을 입력하세요";
                         text.name = i + '.' + j;
                     }
@@ -253,13 +251,32 @@
             }
         }
 
-        function createTodoColor() {
-            
+        // todo 테이블의 colorpicker 생성 (TODO)
+        function createTodoColor(currentCell) {
+            console.log("good job!");
+            console.log(currentCell.name.split('.')[0]);
+            const col = currentCell.name.split('.')[0];
+            let colorpicker = document.querySelector('table input[name="'+ col +'.0"]');
+            console.log(colorpicker);
+            // 할일이 비어있으면 colorpicker 없어지고, 있으면 colorpicker 생김
+            // TODO : 할일 중 하나만 비어도 작동된다. 이 부분 수정할 것
+            if (currentCell.value == '') {
+                colorpicker.style.display="none";
+            } else {
+                colorpicker.style.display="inline";
+            }
         }
 
+        // 동적 todo 테이블 형성
         let table = document.querySelector('table');
         generateTodoTable(table);
         getDate();
+
+        // todo 테이블의 input에 값이 변경되면 color picker 등장, nodelist이므로 element들이 모두 선택될 수 있도록 for 사용.
+        let inputs = document.querySelectorAll('table input:not(.colorpicker)');
+        for (const input of inputs) {
+            input.addEventListener("change", function() {createTodoColor(input)});
+        }
 
         $(document).ready(function () {
             $("#day-picker").picker({
