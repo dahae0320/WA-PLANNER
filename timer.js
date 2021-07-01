@@ -70,7 +70,13 @@ function init(){
   startButton.style.width = "20vw"
   startButton.style.borderRadius = "50%"
 }
-
+function getLiId(){
+  let today = new Date();
+  let hrs = today.getHours()-5;
+  let min = today.getMinutes();
+  let txt = 'h'+hrs.toString()+'m'+min.toString();
+  return txt
+}
 // 버튼아래있는 display 출력 함수
 function print(txt) {
   document.getElementById("display").innerHTML = txt;
@@ -84,15 +90,18 @@ function printreal(txt){
 
 //시작버튼 클릭시 이벤트함수
 function start() {
+  
+  time.push(timeToString(Date.now()));
   startTime = Date.now() - elapsedTime;
   timerInterval = setInterval(function printTime() {
     elapsedTime = Date.now() - startTime; realTime = elapsedTime;
-    print(timeToString(elapsedTime));printreal(timeToStringReal(realTime));
-  },10);
+    print(timeToString(elapsedTime));document.getElementById(getLiId()).style.backgroundColor="blue";},1000);
+
   stopButton.style.boxShadow="0px 10px 3px rgba(0, 0, 0, 0.07) inset";
   stopButton.style.display="block";
   pauseButton.style.display="block";
   startButton.style.display = "none";
+  //getElementById(getLiId()).style.backgroundColor="blue";
   // showButton("END");
 }
 
@@ -100,6 +109,7 @@ function start() {
 function pause() {
   clearInterval(timerInterval);
   // clearInterval(timerIntervalReal);
+  time.push(timeToString(Date.now()))
   startButton.style.width = "10vw";
   startButton.style.borderRadius="10vw 0px 0px 10vw"
   stopButton.style.boxShadow="10px 10px 3px rgba(0, 0, 0, 0.07) inset";
@@ -110,7 +120,9 @@ function pause() {
 
 // 종료버튼 클릭시 이벤트함수
 function stop(){
+  console.log(time);
   init();
+  
   //공부 시간 타임테이블로 전달
 }
 
@@ -121,6 +133,7 @@ function reset() {
 }
 // 버튼 클릭시 그림자 변경
 
+let time = [];
 
 let startButton = document.getElementById("btn-start");
 let pauseButton = document.getElementById("btn-pause");

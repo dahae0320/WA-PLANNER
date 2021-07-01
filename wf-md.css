@@ -40,11 +40,11 @@ body{
     line-height: 30px;
 
     display: flex;
-    margin-right: 30px;
-    margin-top: 30px;
+    margin-right: 20px;
+    margin-top: 20px;
 
-    height: 60px;
-    width: 170px;
+    height: 64px;
+    width: 140px;
     align-items: center;
     text-align: center;
     border-right: 0.7px solid #B5B5B5;;
@@ -143,4 +143,13 @@ body{
 }
 .heart{
     width:20px;
+}
+a:link { 
+    color: black; text-decoration: none;
+}
+a:visited { 
+    color: black; text-decoration: none;
+}
+a:hover { 
+    color: black; text-decoration: none;
 }

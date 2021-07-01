@@ -9,35 +9,18 @@
     <link href="index.css" rel="stylesheet" />
     <title>WA!PLANNER</title>
     <link rel="stylesheet" type="text/css" href="planner.css">
+    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body>
     <div class="container">
         <div class="__dial">
-            <label for="dial-btn-open"  class="d-b-o" onclick=""><img class="dial-btn-image" src="image/calendar.png" alt="" width="20px"></label>
-            <input type="checkbox" id="dial-btn-open">
-            <div class="__calendar">
-                <div class="calendar">
-                    <div id="exit">
-                        <label for="dial-btn-open"  class="exit" onclick=""><img src="image/exit.png" alt="" width="20px"></label>
-                        <input type="checkbox" id="dial-btn-open">
-                    </div>
-                    <div id="cal-btn">
-                            <img src="image/tri.png" class='cal-btn-left' alt="" id="moins" onclick="minus()" width="20px">
-                            <input type="text" size="5" value="2021" id="count" readonly>
-                            <img src="image/tri.png" class="cal-btn-right" alt="" id="plus" onclick="plus()" width="20px">
-                            <label for="cal-btn-year" onclick=""><img class='nemo' src="image/nemo.png" alt="" width="60px" height="30px"></label>
-                            <input type="checkbox" id="cal-btn-year">
-                            <div class="__total-cal" id="__total-cal">
-                                <div class="total-cal"></div>
-                            </div>
-                    </div>
-                    <div id="cal-dial">
-                        <!-- <div class="cal-dial-left">1</div>
-                        <div class="cal-dial-line">2</div>
-                        <div class="cal-dial-right">3</div> -->
-                        <div id="day-picker"></div>
-                        <div class="output"></div>
-                    </div>
+            <label for="cal-btn-year" onclick=""><img class='dial-btn-image' src="image/calendar.png" alt="" width="60px" height="30px"></label>
+            <input type="checkbox" id="cal-btn-year">
+            <div class="__total-cal" id="__total-cal">
+                <div class="total-cal">
+                    <div class="calendar-wrapper"></div>
                 </div>
             </div>
         </div>
@@ -90,7 +73,7 @@
         </div>
         <div class="__righttop">
             <div id="rt-page"> 
-                <a href="" class="">로그아웃</a><br>
+                <a href="login.html" class="">로그아웃</a><br>
                 <a href="">마이페이지</a><br>
                 <a href="waf-madang.html">와플마당</a>
             </div>
@@ -227,24 +210,22 @@
         function generateTodoTable(table) {
             for (let i = 0; i < 15; i++) {
                 let row = table.insertRow();
-                for (let j = 0; j < 2; j++) {
+                for (let j = 0; j < 3; j++) {
                     let cell = row.insertCell();
-                    let text, initText, colorPicker;
+                    let text, initText;
                     if (j == 0) {
                         text = document.createElement('input');
+                        text.type = "color";
+                        text.style.display = "none";
                         text.style.border = "none";
+                        text.className = "colorpicker";
                         text.name = i + '.' + j;
-
-                        // colorPicker = document.createElement('input');
-                        // colorPicker.type = "color";
-
-                        // cell.appendChild(colorPicker);
                     } else {
                         text = document.createElement('input');
                         text.style.border = "none";
                         text.name = i + '.' + j;
                     }
-                    if (i == 0 && j == 1) {
+                    if (i == 0 && j == 2) {
                         text.placeholder = "+ 이곳에 할 일을 입력하세요";
                         text.name = i + '.' + j;
                     }
@@ -253,13 +234,29 @@
             }
         }
 
-        function createTodoColor() {
-            
+        // todo 테이블의 colorpicker 생성 (TODO)
+        function createTodoColor(currentCell) {
+            const col = currentCell.name.split('.')[0];
+            let colorpicker = document.querySelector('table input[name="'+ col +'.0"]');
+            // 할일이 비어있으면 colorpicker 없어지고, 있으면 colorpicker 생김
+            // TODO : 할일 중 하나만 비어도 작동된다. 이 부분 수정할 것
+            if (currentCell.value == '') {
+                colorpicker.style.display="none";
+            } else {
+                colorpicker.style.display="inline";
+            }
         }
 
+        // 동적 todo 테이블 형성
         let table = document.querySelector('table');
         generateTodoTable(table);
         getDate();
+
+        // todo 테이블의 input에 값이 변경되면 color picker 등장, nodelist이므로 element들이 모두 선택될 수 있도록 for 사용.
+        let inputs = document.querySelectorAll('table input:not(.colorpicker)');
+        for (const input of inputs) {
+            input.addEventListener("change", function() {createTodoColor(input)});
+        }
 
         $(document).ready(function () {
             $("#day-picker").picker({
@@ -271,6 +268,27 @@
                 $(".day-picker").data("value", s);
             });
         });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="calendar.min.js"></script>
+    <script type="text/javascript">
+        var config =
+            `function selectDate(date) {
+        $('.calendar-wrapper').updateCalendarOptions({
+          date: date
+        });
+      }
+      
+      var defaultConfig = {
+        weekDayLength: 1,
+        date: new Date(),
+        onClickDate: selectDate,
+        showYearDropdown: true,
+        startOnMonday: true,
+      };
+      
+      $('.calendar-wrapper').calendar(defaultConfig);`;
+        eval(config);
     </script>
     <script src="jquery.ios.picker.js"></script>
 
