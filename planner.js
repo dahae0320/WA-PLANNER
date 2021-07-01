@@ -46,7 +46,9 @@ for (let i = 0; i < 24; i++)
     for(let j = 0; j < 60; j++)
     {
         let li = document.createElement("li");
+        let txt = 'h'+i.toString()+'m'+j.toString();
         ul.appendChild(li);
+        li.setAttribute("id", txt);
         if((j+1) % 5 == 0)
         {
             if(j != 59)
