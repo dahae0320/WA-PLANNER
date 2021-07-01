@@ -9,6 +9,9 @@
     <link href="index.css" rel="stylesheet" />
     <title>WA!PLANNER</title>
     <link rel="stylesheet" type="text/css" href="planner.css">
+    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body>
     <div class="container">
@@ -28,15 +31,15 @@
                             <label for="cal-btn-year" onclick=""><img class='nemo' src="image/nemo.png" alt="" width="60px" height="30px"></label>
                             <input type="checkbox" id="cal-btn-year">
                             <div class="__total-cal" id="__total-cal">
-                                <div class="total-cal"></div>
+                                <div class="total-cal">
+                                    <div class="calendar-wrapper"></div>
+                                </div>
                             </div>
                     </div>
                     <div id="cal-dial">
                         <!-- <div class="cal-dial-left">1</div>
                         <div class="cal-dial-line">2</div>
                         <div class="cal-dial-right">3</div> -->
-                        <div id="day-picker"></div>
-                        <div class="output"></div>
                     </div>
                 </div>
             </div>
@@ -271,6 +274,27 @@
                 $(".day-picker").data("value", s);
             });
         });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="calendar.min.js"></script>
+    <script type="text/javascript">
+        var config =
+            `function selectDate(date) {
+        $('.calendar-wrapper').updateCalendarOptions({
+          date: date
+        });
+      }
+      
+      var defaultConfig = {
+        weekDayLength: 1,
+        date: new Date(),
+        onClickDate: selectDate,
+        showYearDropdown: true,
+        startOnMonday: true,
+      };
+      
+      $('.calendar-wrapper').calendar(defaultConfig);`;
+        eval(config);
     </script>
     <script src="jquery.ios.picker.js"></script>
 
