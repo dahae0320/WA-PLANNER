@@ -324,6 +324,7 @@ tbody > tr > td > input:focus {
     left: 25px;
     top: 25px;
     z-index: 1;
+    cursor: pointer;
 }
 
 #count{
@@ -351,9 +352,6 @@ tbody > tr > td > input:focus {
 }
 #dial-btn-open,#cal-btn-year,#dial-btn-close{
     display: none;
-}
-.d-b-o,#count,.nemo,.exit{
-    cursor: pointer;
 }
 
 #cal-btn-year:checked + .__total-cal{
