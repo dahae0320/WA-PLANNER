@@ -326,29 +326,6 @@ tbody > tr > td > input:focus {
     z-index: 1;
 }
 
-/* .calendar{
-    position: absolute;
-    width: 180px;
-    height: 100vh;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    background: #FFFFFF;
-    border: 1px solid #E1E1E1;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
-} */
-/* #cal-btn{
-    flex: 1;
-    text-align: center;
-    
-} */
-/* #cal-dial{
-    flex: 6;
-    display: flex;
-} */
 #count{
     font-family: Roboto;
     font-size: 20px;
@@ -359,14 +336,7 @@ tbody > tr > td > input:focus {
 #count:focus {
     outline:none;
 }
-/* .cal-btn-left{
-    transform: rotate(-90deg);
-    margin-top: 30%;
-}
-.cal-btn-right{
-    
-    transform: rotate(90deg);
-} */
+
 #__total-cal{
     display: none;
     position: absolute;
@@ -385,24 +355,7 @@ tbody > tr > td > input:focus {
 .d-b-o,#count,.nemo,.exit{
     cursor: pointer;
 }
-/* .__calendar{
-    display: none;
-    position: absolute;
-} */
-/* #dial-btn-open:checked + .__calendar{
-    display:inline;
-} */
-/* .exit{
-    position: absolute;
-    left: 155px;
-    top: 5px;
-} */
-/* .nemo{
-    position: absolute;
-    left: 47px;
-    top: 50px;
-    opacity: 0;
-} */
+
 #cal-btn-year:checked + .__total-cal{
     display: inline;
 }
