@@ -149,13 +149,34 @@ body{
     font-weight: bolder;
 }
 .login-bottom-social{
+    font-family: Roboto;
     display: flex;
     justify-content: center;
 }
 .login-bottom-social-facebook{
+    margin-left: 8%;
     margin-right: 2%;
     margin-top: 4%;
+    width: 40%;
+    height: 10%;
+    flex: 1;
+    display: flex;
+
+    
+    background: #FFFFFF;
+    border-radius: 10px;
+    
 }
 .login-bottom-social-google{
     margin-top: 4%;
+    margin-right: 3%;
+    flex: 1;
+    display: flex;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+.google-txt,.facebook-txt{
+    margin-left: 5%;
+    margin-top: %;
 }

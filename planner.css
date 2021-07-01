@@ -21,6 +21,7 @@
 body {
     margin:0px;
     background-image: url('/image/back.jpeg');
+    overflow: hidden;
 }
 .container {
     display: flex;
@@ -435,10 +436,11 @@ input[type="color"]::-webkit-color-swatch {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 15px;
+    font-size: 12px;
     line-height: 20px;
     flex-direction: column;
     border-right: 1px solid #929292;
+    color: #949494;
 }
 #rt-page{
     margin-right: 10px;
