@@ -190,6 +190,25 @@ input[type="color"]::-webkit-color-swatch {
     font-weight: normal;
 }
 
+.timetable-switch
+{
+    width: 10%;
+    height: 1.5vh;
+    margin-left: 80%;
+    border-radius: 5px;
+    background-color:rgba(0, 0, 0, 0.25);
+}
+
+.switch-circle
+{
+    width: 38%;
+    height:100%;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.2);
+
+}
+
 .timetable-layout
 {
     margin: 0;

@@ -223,3 +223,17 @@ $('.dotted-pen').on('mouseover', function(){
 $('.dotted-pen').on('mouseleave', function(){
     $('.dotted-pen').css('opacity', '0%');
 });
+
+//--------------------------------Switch button--------------------------------//
+//-----------------------------------------------------------------------------//
+var isSwitchOn = false;
+$(".switch-circle").on('click', function(){
+    if(isSwitchOn == false){
+        $(this).css('margin-left', "63%");
+        isSwitchOn = true;
+    }
+    else{
+        $(this).css('margin-left', "0%");
+        isSwitchOn = false;
+    }
+});
