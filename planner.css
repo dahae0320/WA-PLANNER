@@ -151,14 +151,22 @@ tbody > tr > td > input:focus {
 }
 /* todo의 colorpicker */
 input[type="color"] {
-	width: 17px;
-	height: 17px;
+    position: absolute;
+	width: 0;
+	height: 0;
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
 	padding: 0;
 }
 input[type="color"]::-webkit-color-swatch {
 	border: none;
+}
+tbody > tr > td > div {
+    background-color: black;
+    margin:0;
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
 }
 
 #time {

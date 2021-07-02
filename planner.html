@@ -217,14 +217,19 @@
                 let row = table.insertRow();
                 for (let j = 0; j < 3; j++) {
                     let cell = row.insertCell();
-                    let text, initText;
+                    let text, initText, checker;
                     if (j == 0) {
                         text = document.createElement('input');
                         text.type = "color";
-                        text.style.display = "none";
+                        text.style.visibility = "hidden";
                         text.style.border = "none";
                         text.className = "colorpicker";
                         text.name = i + '.' + j;
+
+                        checker = document.createElement('div');
+                        checker.className = i + '.' + j;
+                        checker.style.visibility = "hidden";
+                        cell.appendChild(checker);
                     } else {
                         text = document.createElement('input');
                         text.style.border = "none";
@@ -240,10 +245,10 @@
         }
 
         // todo 테이블의 colorpicker 생성 (TODO)
-        function createTodoColor(currentCell) {
+        function createColorPicker(currentCell) {
             const col = currentCell.name.split('.')[0];  // 행
             const row = currentCell.name.split('.')[1];  // 렬 : 1,2 중 하나
-            let colorpicker = document.querySelector('table input[name="'+ col +'.0"]');   // currentCell이 있는 행의 colorpicker
+            let todoChecker = document.querySelector('table div[class="'+ col +'.0"]');
             let besideCell;  // currentCell 의 옆칸
 
             if (row == 1) {  // name="X.1" 이면
@@ -255,10 +260,26 @@
 
             // 할일(과목, 세부할일)이 비어있으면 해당 행의 colorpicker 없어지고, 있으면 colorpicker 생김
             if (currentCell.value == '') {
-                if (besideCell.value == '') colorpicker.style.display="none";
+                if (besideCell.value == '') todoChecker.style.visibility = "hidden";
             } else {
-                colorpicker.style.display="inline";
+                todoChecker.style.visibility = "visible";
             }
+        }
+
+        // 할일 지정하기(한번클릭)
+        function checkTodo(target) {
+            console.log("checkTodo");
+        }
+
+        // 할일 색상 지정하기(두번클릭)
+        function getReadyToSetTodoColor(todoChecker) {
+            const col = todoChecker.className.split('.')[0];  // 행
+            let colorpicker = document.querySelector('table input[name="'+ col +'.0"]');
+            colorpicker.click();
+        }
+
+        function setTodoColor(colorpicker) {
+            
         }
 
         function createDdayMemo(target) {
@@ -277,11 +298,23 @@
         // todo 테이블의 input에 값이 변경되면 color picker 등장, nodelist이므로 element들이 모두 선택될 수 있도록 for 사용.
         let inputs = document.querySelectorAll('table input:not(.colorpicker)');
         for (const input of inputs) {
-            input.addEventListener("change", function() {createTodoColor(input)});
+            input.addEventListener("change", function() {createColorPicker(input)});
         }
 
-        let ddayCard = document.querySelector('.dday-memo-real card');
-        // hi.addEventListener("mouseover", function() {createDdayMemo(hi)});
+        let todoCheckers = document.querySelectorAll('table div');
+        for (const todoChecker of todoCheckers) {
+            todoChecker.addEventListener("click", function() {checkTodo(todoChecker)} );
+            todoChecker.addEventListener("dblclick", function() {getReadyToSetTodoColor(todoChecker)} );
+        }
+
+        let colorpickers = document.querySelectorAll('table input.colorpicker');
+        for (const colorpicker of colorpickers) {
+            colorpicker.addEventListener("input", function() {setTodoColor(colorpicker)} , false);
+            console.log(colorpicker);
+            console.log(colorpicker.value);
+        }
+
+        // let ddayCard = document.querySelector('.dday-memo-real card');
 
         $(document).ready(function () {
             $("#day-picker").picker({
