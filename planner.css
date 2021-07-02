@@ -87,11 +87,14 @@ body {
     height: 60px;
     color: #9C9C9C;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     font-family: 'S-CoreDream-2ExtraLight';
 }
-.dday-memo-real:hover {
+.dday-memo-real .card {
+    height: 100%;
+}
+.dday-memo-real .card:hover{
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -122,9 +125,10 @@ table tr:first-child td {
 table tr td:first-child,
 table tr th:first-child {
     /* border-left: 0; */
-    /* 이게 왜 되는거지,,ㅡ,,? */
+    /* 이게 왜 되는거지,,,?  */
     width: 30px;
     border:1px;
+    text-align: center;
 }
 table tr td:nth-child(2),
 table tr th:nth-child(2) {

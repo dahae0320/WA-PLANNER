@@ -34,7 +34,9 @@
                     <div id="dday-memo">
                         <div class="dday-memo-title">D-DAY/MEMO</div>
                         <div class="dday-memo-real">
-                            <p>+ 이곳에 디데이나 메모를 추가하세요.</p>
+                            <!-- <p>+ 이곳에 디데이나 메모를 추가하세요.</p> -->
+                            <div class="card 1">와앙</div>
+                            <div class="card 1">와앙</div>
                         </div>
                     </div>
                     <div id="todo">
@@ -256,6 +258,14 @@
             }
         }
 
+        function createDdayMemo(target) {
+            // let gg = document.querySelector('.dday-memo-real p');
+            // gg.style.visibility = "visible";
+            // setTimeout(() => {
+            //     gg.style.visibility = "hidden";
+            // }, 1000);
+        }
+
         // 동적 todo 테이블 형성
         let table = document.querySelector('table');
         generateTodoTable(table);
@@ -266,6 +276,9 @@
         for (const input of inputs) {
             input.addEventListener("change", function() {createTodoColor(input)});
         }
+
+        let ddayCard = document.querySelector('.dday-memo-real card');
+        // hi.addEventListener("mouseover", function() {createDdayMemo(hi)});
 
         $(document).ready(function () {
             $("#day-picker").picker({
