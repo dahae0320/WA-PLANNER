@@ -153,19 +153,18 @@ function createNewPen(){
 
 var isPenUp = [false, false, false, false]; //인덱스 0이 pen1의 속성
 var nowPenNum = "";
-var DELAY = 200, timer = null, clickCnt = 0;
-
 //input태그 색 변경 시 형광펜 뚜껑 색 변경 및 현재 컬러 변경
 $("input[class^=color-pen]").change(function(){
     var inputNum = $(this).attr('class')[10];
     $(format(".pen-lid-{0}", inputNum)).attr('fill', $(this).val());
     //pen up 상태에서 컬러 변경 시 바로 적용
     if(isPenUp[inputNum-1] == true)
-        paintColor = $(this).val();
+    paintColor = $(this).val();
 })
 
 //펜 클릭 이벤트
 //div중에 class가 color-pen으로 시작하는 객체만 선택 (^은 시작하는 문자열, *은 포함되는 문자열)
+var DELAY = 200, timer = null, clickCnt = 0;
 $("div[class^=color-pen]").on('click', function(){
     clickCnt++; //더블클릭, 클릭 구분
 
@@ -190,16 +189,12 @@ $("div[class^=color-pen]").on('click', function(){
             }, DELAY);
             break;
         case 2:
-            doDoubleClick(nowPenNum);
+            clearTimeout(timer);
+            $(format("input[class^=color-pen-{0}]", nowPenNum)).trigger('click');    
+            clickCnt =0;
             break;
     }
 })
-
-function doDoubleClick(targetNum){
-    clearTimeout(timer);
-    $(format("input[class^=color-pen-{0}]", targetNum)).trigger('click');    
-    clickCnt =0;
-}
 
 //한가지 펜 고르면 나머지 펜들은 다 down
 function downOtherPen(targetNum){
@@ -218,10 +213,10 @@ $('.dotted-pen').on('click', function(){
 
 //마우스 올릴때만 나타나기
 $('.dotted-pen').on('mouseover', function(){
-    $('.dotted-pen').css('opacity', '100%');
+    $(this).css('opacity', '100%');
 });
 $('.dotted-pen').on('mouseleave', function(){
-    $('.dotted-pen').css('opacity', '0%');
+    $(this).css('opacity', '0%');
 });
 
 //--------------------------------Switch button--------------------------------//
@@ -237,3 +232,46 @@ $(".switch-circle").on('click', function(){
         isSwitchOn = false;
     }
 });
+
+//--------------------------------Book mark--------------------------------//
+//-------------------------------------------------------------------------//
+
+//북마크 지정하기 전 마우스 올리면 점선북마크 보이게
+var isBookMarkOn = false;
+$('.bookmark').on('mouseover', function(){
+    console.log(isBookMarkOn);
+    if(isBookMarkOn == false)
+        $(this).css('opacity', '100%');
+});
+$('.bookmark').on('mouseleave', function(){
+    if(isBookMarkOn == false)
+        $(this).css('opacity', '0%');
+});
+
+//컬러 변경시 적용
+$(".bookmark-color").change(function(){
+    $(".bookmark").css('background-color', $('.bookmark-color').val());
+})
+
+//원클릭시 북마크 생성, 더블클릭시 색 변경
+var DELAY = 200, timer = null, clickCnt = 0;
+$(".bookmark").on('click', function(){
+    clickCnt++; //더블클릭, 클릭 구분
+    switch(clickCnt){
+        case 1:
+            isBookMarkOn = true;
+            timer = setTimeout(function(){
+                $(".bookmark").css('border', '0px solid red');
+                $(".bookmark").css('opacity', '50%');
+                $(".bookmark").css('background-color', $('.bookmark-color').val());
+                clickCnt = 0;
+            }, DELAY);
+            break;
+        case 2:
+                clearTimeout(timer);
+                $('.bookmark-color').trigger('click');
+                clickCnt = 0;
+            break;
+    }
+})
+

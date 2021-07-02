@@ -169,9 +169,26 @@ tbody > tr > td > div {
     width: 17px;
 }
 
+.bookmark {
+    position: relative;
+    opacity: 0;
+    top: 5%;
+    left: 90%;
+    width: 25%;
+    height: 3%;
+    border: 1px dotted rgb(154, 154, 154);
+}
+
+.bookmark-color
+{
+    width: 0;
+    height: 0;
+    opacity: 0%;
+    visibility:hidden;
+}
 #time {
     /* margin: 20% 0px 0px 7%; */
-    margin: 7vh 0px 0px 3vh;
+    margin: 4vh 0px 0px 3vh;
     font-weight: lighter;
 }
 .time-title
@@ -321,7 +338,8 @@ tbody > tr > td > div {
     margin-left : 15%;
     box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.07);
     
-  }
+}
+
 #btn-pause{
     display: none;
     width: 10vw;
@@ -469,6 +487,7 @@ a:hover {
 .color-pen-4-pick, .color-pen-3-pick, .color-pen-2-pick, .color-pen-1-pick
 {
     opacity: 0%;
+    visibility:hidden;  /* width height 0한다고 input 태그가 없어지는건 아니고 이거 써야 하더라구요.. */
     width: 0%;
     height: 0%;
     position: absolute;
