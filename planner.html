@@ -236,12 +236,21 @@
 
         // todo 테이블의 colorpicker 생성 (TODO)
         function createTodoColor(currentCell) {
-            const col = currentCell.name.split('.')[0];
-            let colorpicker = document.querySelector('table input[name="'+ col +'.0"]');
-            // 할일이 비어있으면 colorpicker 없어지고, 있으면 colorpicker 생김
-            // TODO : 할일 중 하나만 비어도 작동된다. 이 부분 수정할 것
+            const col = currentCell.name.split('.')[0];  // 행
+            const row = currentCell.name.split('.')[1];  // 렬 : 1,2 중 하나
+            let colorpicker = document.querySelector('table input[name="'+ col +'.0"]');   // currentCell이 있는 행의 colorpicker
+            let besideCell;  // currentCell 의 옆칸
+
+            if (row == 1) {  // name="X.1" 이면
+                besideCell = document.querySelector('table input[name="'+col+'.2"]');  // name="X.2" 가 옆칸
+            } else {
+                besideCell = document.querySelector('table input[name="'+col+'.1"]');
+            }
+            console.log(besideCell);
+
+            // 할일(과목, 세부할일)이 비어있으면 해당 행의 colorpicker 없어지고, 있으면 colorpicker 생김
             if (currentCell.value == '') {
-                colorpicker.style.display="none";
+                if (besideCell.value == '') colorpicker.style.display="none";
             } else {
                 colorpicker.style.display="inline";
             }
