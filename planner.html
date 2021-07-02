@@ -55,7 +55,10 @@
                     </div>
                     <div id="timetable">
                         <div class="timetable-title">
-                            <p>TIMETABLE<p></p>
+                            <p>TIMETABLE</p>
+                        </div>
+                        <div class="timetable-switch">
+                            <div class="switch-circle"></div>
                         </div>
                         <div class="timetable-layout">
                             <div class="timetable-matrix"></div>
@@ -81,8 +84,8 @@
             </div>
         </div>
         <div class="__highlighter">
-            <div class="color-pen-4">
-                <input type="color" class="color-pen-4-pick">
+            <div class="color-pen-1" style="display:none">
+                <input type="color" class="color-pen-1-pick">
                 <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_i)">
                     <rect x="1" y="42" width="31" height="167" fill="white"/>
@@ -92,53 +95,8 @@
                     <rect y="67" width="63" height="33" rx="5" transform="rotate(-90 0 67)" fill="white"/>
                     </g>
                     <rect x="0.5" y="66.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 66.5)" stroke="#A7A7A7"/>
-                    <rect x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
-                    <rect x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
-                </svg> 
-            </div>
-            <div class="color-pen-3">
-                <input type="color" class="color-pen-3-pick">
-                <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_i)">
-                    <rect x="1" y="42" width="31" height="167" fill="white"/>
-                    </g>
-                    <rect x="1.5" y="42.5" width="30" height="166" stroke="#A7A7A7"/>
-                    <g filter="url(#filter1_i)">
-                    <rect y="67" width="63" height="33" rx="5" transform="rotate(-90 0 67)" fill="white"/>
-                    </g>
-                    <rect x="0.5" y="66.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 66.5)" stroke="#A7A7A7"/>
-                    <rect x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
-                    <rect x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
-                </svg> 
-            </div>
-            <div class="color-pen-2">
-                <input type="color" class="color-pen-2-pick" value="color-pick-2">
-                <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_i)">
-                    <rect x="1" y="42" width="31" height="167" fill="white"/>
-                    </g>
-                    <rect x="1.5" y="42.5" width="30" height="166" stroke="#A7A7A7"/>
-                    <g filter="url(#filter1_i)">
-                    <rect y="67" width="63" height="33" rx="5" transform="rotate(-90 0 67)" fill="white"/>
-                    </g>
-                    <rect x="0.5" y="66.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 66.5)" stroke="#A7A7A7"/>
-                    <rect x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
-                    <rect x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
-                </svg>                   
-            </div>
-            <div class="color-pen-1">
-                <input type="color" class="color-pen-1-pick" onchange="saveNowColor()">
-                <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g filter="url(#filter0_i)">
-                    <rect x="1" y="42" width="31" height="167" fill="white"/>
-                    </g>
-                    <rect x="1.5" y="42.5" width="30" height="166" stroke="#A7A7A7"/>
-                    <g filter="url(#filter1_i)">
-                    <rect y="67" width="63" height="33" rx="5" transform="rotate(-90 0 67)" fill="white"/>
-                    </g>
-                    <rect x="0.5" y="66.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 66.5)" stroke="#A7A7A7"/>
-                    <rect x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
-                    <rect x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
+                    <rect class="pen-lid-1" x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
+                    <rect class="pen-lid-1" x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
                     <defs>
                     <filter id="filter0_i" x="0" y="42" width="32" height="168" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                     <feFlood flood-opacity="0" result="BackgroundImageFix"/>
@@ -163,6 +121,51 @@
                     </defs>
                     </svg>                    
                 </div>
+            <div class="color-pen-2" style="display:none">
+                <input type="color" class="color-pen-2-pick" value="color-pick-2">
+                <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_i)">
+                    <rect x="1" y="42" width="31" height="167" fill="white"/>
+                    </g>
+                    <rect x="1.5" y="42.5" width="30" height="166" stroke="#A7A7A7"/>
+                    <g filter="url(#filter1_i)">
+                    <rect y="67" width="63" height="33" rx="5" transform="rotate(-90 0 67)" fill="white"/>
+                    </g>
+                    <rect x="0.5" y="66.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 66.5)" stroke="#A7A7A7"/>
+                    <rect class="pen-lid-2" x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
+                    <rect class="pen-lid-2" x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
+                </svg>                   
+            </div>
+            <div class="color-pen-3" style="display:none">
+                <input type="color" class="color-pen-3-pick">
+                <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_i)">
+                    <rect x="1" y="42" width="31" height="167" fill="white"/>
+                    </g>
+                    <rect x="1.5" y="42.5" width="30" height="166" stroke="#A7A7A7"/>
+                    <g filter="url(#filter1_i)">
+                    <rect y="67" width="63" height="33" rx="5" transform="rotate(-90 0 67)" fill="white"/>
+                    </g>
+                    <rect x="0.5" y="66.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 66.5)" stroke="#A7A7A7"/>
+                    <rect class="pen-lid-3" x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
+                    <rect class="pen-lid-3" x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
+                </svg> 
+            </div>
+            <div class="color-pen-4" style="display:none">
+                <input type="color" class="color-pen-4-pick">
+                <svg width="33" height="204" viewBox="0 0 33 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_i)">
+                    <rect x="1" y="42" width="31" height="167" fill="white"/>
+                    </g>
+                    <rect x="1.5" y="42.5" width="30" height="166" stroke="#A7A7A7"/>
+                    <g filter="url(#filter1_i)">
+                    <rect y="67" width="63" height="33" rx="5" transform="rotate(-90 0 67)" fill="white"/>
+                    </g>
+                    <rect x="0.5" y="66.5" width="62" height="32" rx="4.5" transform="rotate(-90 0.5 66.5)" stroke="#A7A7A7"/>
+                    <rect class="pen-lid-4" x="4.5" y="3.5" width="3" height="23" transform="rotate(-90 4.5 3.5)" stroke="#A7A7A7"/>
+                    <rect class="pen-lid-4" x="17.5" y="4.5" width="7" height="42" stroke="#A7A7A7"/>
+                </svg> 
+            </div>
             <div class="dotted-pen">
                 <svg width="33" height="161" viewBox="0 0 33 161" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="1.5" y="65.5" width="30" height="278" stroke="#A7A7A7" stroke-dasharray="2 2"/>
