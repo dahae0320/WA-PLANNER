@@ -269,29 +269,34 @@
             }
         }
 
-        // 할일 지정하기(한번클릭)
+        // 할일 지정하기(한번클릭) - 미완성
         function checkTodo(target) {
             console.log("checkTodo");
         }
 
-        // 할일 색상 지정하기(두번클릭)
+        // 할일 색상을 선택할 수 있도록 colorpicker 화면 출력(두번클릭)
         function getReadyToSetTodoColor(todoChecker) {
             const col = todoChecker.className.split('.')[0];  // 행
             let colorpicker = document.querySelector('table input[name="'+ col +'.0"]');
             colorpicker.click();
         }
 
+        // 할일 색상 지정하기
         function setTodoColor(colorpicker) {
-            
+            const col = colorpicker.name.split('.')[0];  // 행
+            let todoChecker = document.querySelector('table div[class="'+ col +'.0"]');
+            let choiceColor = colorpicker.value;
+            todoChecker.style.backgroundColor = choiceColor;
         }
 
-        function createDdayMemo(target) {
-            // let gg = document.querySelector('.dday-memo-real p');
-            // gg.style.visibility = "visible";
-            // setTimeout(() => {
-            //     gg.style.visibility = "hidden";
-            // }, 1000);
-        }
+        // function createDdayMemo(target) {
+        //     // let gg = document.querySelector('.dday-memo-real p');
+        //     // gg.style.visibility = "visible";
+        //     // setTimeout(() => {
+        //     //     gg.style.visibility = "hidden";
+        //     // }, 1000);
+        // }
+
 
         // 동적 todo 테이블 형성
         let table = document.querySelector('table');
@@ -304,31 +309,21 @@
             input.addEventListener("change", function() {createColorPicker(input)});
         }
 
+        // todo 테이블의 colorpicker(div, 동그라미)가 한번클릭(할일선택)이냐, 두번클릭(색상선택)이냐 에 따라 수행 달라짐.
         let todoCheckers = document.querySelectorAll('table div');
         for (const todoChecker of todoCheckers) {
             todoChecker.addEventListener("click", function() {checkTodo(todoChecker)} );
             todoChecker.addEventListener("dblclick", function() {getReadyToSetTodoColor(todoChecker)} );
         }
 
+        // todo 테이블의 colorpicker의 바뀐 색상을 감지.
         let colorpickers = document.querySelectorAll('table input.colorpicker');
         for (const colorpicker of colorpickers) {
             colorpicker.addEventListener("input", function() {setTodoColor(colorpicker)} , false);
-            console.log(colorpicker);
-            console.log(colorpicker.value);
         }
 
         // let ddayCard = document.querySelector('.dday-memo-real card');
 
-        $(document).ready(function () {
-            $("#day-picker").picker({
-                data: ['1','2','3','4','5','6','7','8','9','10','11','12'],
-                lineHeight: 30,
-                selected: 0
-            }, function (s) {
-                $(".output").html(s);
-                $(".day-picker").data("value", s);
-            });
-        });
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
     <script src="calendar.min.js"></script>
