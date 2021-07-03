@@ -87,18 +87,24 @@ body {
     height: 60px;
     color: #9C9C9C;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     font-family: 'S-CoreDream-2ExtraLight';
 }
-.dday-memo-real .card {
-    height: 100%;
-}
-.dday-memo-real .card:hover{
+.dday-memo-real:hover {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
+.dday-memo-real .card {
+    height: 100%;
+    font-size:12px;
+}
+/* .dday-memo-real .card:hover{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+} */
 .dday-memo-real > p {
     font-size: 12px;
     margin:0px;
