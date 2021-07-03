@@ -171,8 +171,8 @@ tbody > tr > td > div {
     background-color: black;
     margin:0 auto;
     border-radius: 50%;
-    height: 17px;
-    width: 17px;
+    height: 15px;
+    width: 15px;
 }
 tbody > tr > td > div:hover {
     border: 2px solid red;
