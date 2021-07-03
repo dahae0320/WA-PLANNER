@@ -490,7 +490,7 @@ a:hover {
 {
     display:flex;
     position: fixed;
-    left: 70vw;
+    left: 75vw;
     top: 70vh;
     width: 25vw;
     height: 30vh;
@@ -500,7 +500,7 @@ a:hover {
 .__highlighter > div
 {
     height: 30vh;
-    margin-left: 1vw;
+    margin-left: 2vw;
     margin-top: 10vh;
 }
 
