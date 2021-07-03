@@ -379,10 +379,10 @@ tbody > tr > td > input[type="radio"] {
     width: 20vw;
     height: 6vw;
     left : 80%;
-    top : 60%;
+    top : 50%;
     float: left;
 
-    margin-top : 15%;
+    margin-top : 7%;
     margin-left : 15%;
     font-style: normal;
     font-weight: bold;
