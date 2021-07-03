@@ -171,11 +171,11 @@ tbody > tr > td > div {
     background-color: black;
     margin:0 auto;
     border-radius: 50%;
-    height: 15px;
-    width: 15px;
+    height: 13px;
+    width: 13px;
 }
 tbody > tr > td > div:hover {
-    border: 2px solid red;
+    border: 2px solid #FFFFFF;
 }
 /* todo의 radio 버튼 숨기기 */
 tbody > tr > td > input[type="radio"] {
