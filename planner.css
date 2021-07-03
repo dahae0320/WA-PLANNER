@@ -168,6 +168,18 @@ tbody > tr > td > div {
     height: 17px;
     width: 17px;
 }
+tbody > tr > td > div:hover {
+    border: 2px solid red;
+}
+/* todo의 radio 버튼 숨기기 */
+tbody > tr > td > input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
 
 .bookmark {
     position: relative;
