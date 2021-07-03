@@ -450,7 +450,7 @@ tbody > tr > td > input[type="radio"] {
     top: 20px;
     text-align: right;
     width: 120px;
-    height: 64px;
+    height: 58px;
     display: flex;
     font-family: Roboto;
     font-style: normal;
@@ -458,22 +458,23 @@ tbody > tr > td > input[type="radio"] {
     font-size: 12px;
     line-height: 20px;
     flex-direction: column;
-    border-right: 1px solid #929292;
+    border-right: 2px solid #929292;
     color: #949494;
 }
 #rt-page{
     margin-right: 10px;
 }
 a:link { 
-    color: black; text-decoration: none;
+    color: #949494; text-decoration: none;
 }
 a:visited { 
-    color: black; text-decoration: none;
+    color: #949494; text-decoration: none;
 }
 a:hover { 
-    color: black; text-decoration: none;
+    color: #949494; text-decoration: none;
 }
 .setting-img{
+    width: 2.5%;
     position: fixed;
     right: 8px;
     bottom: 8px;
