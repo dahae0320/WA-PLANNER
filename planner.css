@@ -171,8 +171,8 @@ tbody > tr > td > div {
     background-color: black;
     margin:0 auto;
     border-radius: 50%;
-    height: 15px;
-    width: 15px;
+    height: 17px;
+    width: 17px;
 }
 tbody > tr > td > div:hover {
     border: 2px solid red;
@@ -458,7 +458,7 @@ tbody > tr > td > input[type="radio"] {
     font-size: 12px;
     line-height: 20px;
     flex-direction: column;
-    border-right: 2px solid #bbbbbb;
+    border-right: 2px solid #929292;
     color: #949494;
 }
 #rt-page{
@@ -474,7 +474,7 @@ a:hover {
     color: #949494; text-decoration: none;
 }
 .setting-img{
-    width: 2.5%;
+    width: 2%;
     position: fixed;
     right: 8px;
     bottom: 8px;
