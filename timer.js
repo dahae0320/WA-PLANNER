@@ -1,3 +1,5 @@
+// import isSwitchOn from './planner.js'
+
 //============================ToDo============================
 // 1. 시작,일시정지,종료,초기화 구현 = 완료
 // 2. 시작버튼 눌렀을때 시작버튼 사라지고 일시정지버튼 남음 = 완료
@@ -28,6 +30,7 @@ function timeToString(time) {
   // let formattedMS = ms.toString().padStart(2, "0");
 
   return `${formattedHH}:${formattedMM}:${formattedSS}`;
+
 }
 function timeToStringReal(time) {
   let diffInHrs = time / 3600000;  //시간
@@ -53,9 +56,10 @@ function timeToStringReal(time) {
 }
 
 
+
 let startTime;
 let elapsedTime = 0;
-let realTime = 0;
+
 let timerInterval;
 let timerIntervalReal; //타임테이블 위의 누적시간
 
@@ -88,28 +92,32 @@ function printreal(txt){
 }
 
 
+
 //시작버튼 클릭시 이벤트함수
 function start() {
-  
-  time.push(timeToString(Date.now()));
   startTime = Date.now() - elapsedTime;
   timerInterval = setInterval(function printTime() {
-    elapsedTime = Date.now() - startTime; realTime = elapsedTime;
-    print(timeToString(elapsedTime));document.getElementById(getLiId()).style.backgroundColor="blue";},1000);
-
+    elapsedTime = Date.now() - startTime;
+    print(timeToString(elapsedTime));
+    isSwitchOn ? document.getElementById(getLiId()).style.backgroundColor="blue" : null;
+  }, 10);
   stopButton.style.boxShadow="0px 10px 3px rgba(0, 0, 0, 0.07) inset";
   stopButton.style.display="block";
   pauseButton.style.display="block";
   startButton.style.display = "none";
-  //getElementById(getLiId()).style.backgroundColor="blue";
-  // showButton("END");
 }
+
+  
+  
+  
+  
+
 
 // 일시정지버튼 클릭시 이벤트함수
 function pause() {
   clearInterval(timerInterval);
   // clearInterval(timerIntervalReal);
-  time.push(timeToString(Date.now()))
+  // pauseTime.push(timeToString(Date.now()))
   startButton.style.width = "10vw";
   startButton.style.borderRadius="10vw 0px 0px 10vw"
   stopButton.style.boxShadow="10px 10px 3px rgba(0, 0, 0, 0.07) inset";
@@ -120,21 +128,28 @@ function pause() {
 
 // 종료버튼 클릭시 이벤트함수
 function stop(){
-  console.log(time);
+  totalTime.push(elapsedTime);
+  let realTime = 0;
+  for (index = 0; index < totalTime.length; index++){
+    realTime += totalTime[index];
+  }
+  printreal(timeToStringReal(realTime));
+
   init();
   
   //공부 시간 타임테이블로 전달
 }
-
+//주 석
 // 리셋버튼 클릭시 이벤트함수
 function reset() {
 
-  init();
+  init(); 
 }
 // 버튼 클릭시 그림자 변경
 
-let time = [];
-
+let pauseTime = [];
+let totalTime = [];
+let index = 0;
 let startButton = document.getElementById("btn-start");
 let pauseButton = document.getElementById("btn-pause");
 let stopButton = document.getElementById("btn-stop");
