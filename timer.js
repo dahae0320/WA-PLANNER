@@ -150,7 +150,7 @@ function stop(){
   
   //공부 시간 타임테이블로 전달
 }
-
+//주 석
 // 리셋버튼 클릭시 이벤트함수
 function reset() {
 
