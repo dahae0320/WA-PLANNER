@@ -21,7 +21,7 @@ body{
     background-image: url('image/back.jpeg');
     background-size: 100%;
     margin: 0px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .bg-mainpage{
     position: relative;
