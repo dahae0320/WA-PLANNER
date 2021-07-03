@@ -154,7 +154,7 @@ function stop(){
 // 리셋버튼 클릭시 이벤트함수
 function reset() {
 
-  init();
+  init(); 
 }
 // 버튼 클릭시 그림자 변경
 
