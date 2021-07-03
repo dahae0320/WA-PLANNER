@@ -111,7 +111,7 @@
 }
 
 .week .day.highlight span {
-  color: #2196f3;
+  /* color: #2196f3; */
 }
 
 .week .day.selected span {
