@@ -120,7 +120,7 @@ function pause() {
   // pauseTime.push(timeToString(Date.now()))
   startButton.style.width = "10vw";
   startButton.style.borderRadius="10vw 0px 0px 10vw"
-  stopButton.style.boxShadow="10px 10px 3px rgba(0, 0, 0, 0.07) inset";
+  stopButton.style.boxShadow="0px 10px 3px rgba(0, 0, 0, 0.07) inset";
   pauseButton.style.display="none";
   startButton.style.display = "block";
   
