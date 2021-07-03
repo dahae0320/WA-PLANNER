@@ -99,7 +99,7 @@ function start() {
   timerInterval = setInterval(function printTime() {
     elapsedTime = Date.now() - startTime;
     print(timeToString(elapsedTime));
-    isSwitchOn ? document.getElementById(getLiId()).style.backgroundColor="blue" : null;
+    isSwitchOn ? document.getElementById(getLiId()).style.backgroundColor="#FFE0E0" : null;
   }, 10);
   stopButton.style.boxShadow="0px 10px 3px rgba(0, 0, 0, 0.07) inset";
   stopButton.style.display="block";
