@@ -107,17 +107,6 @@ function start() {
   startButton.style.display = "none";
 }
 
-
-  
-
-  // else{
-    // startTime = Date.now() - elapsedTime;
-    // timerInterval = setInterval(function printTime() {
-    //   elapsedTime = Date.now() - startTime; realTime = elapsedTime;
-    //   print(timeToString(elapsedTime));},10); }
-    // }
-    
-  
   
   
   
