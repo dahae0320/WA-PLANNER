@@ -220,7 +220,7 @@
                 let row = table.insertRow();
                 for (let j = 0; j < 3; j++) {
                     let cell = row.insertCell();
-                    let text, initText, checker;
+                    let text, initText, checker, radio;
                     if (j == 0) {
                         text = document.createElement('input');
                         text.type = "color";
@@ -233,6 +233,13 @@
                         checker.className = i + '.' + j;
                         checker.style.visibility = "hidden";
                         cell.appendChild(checker);
+
+                        radio = document.createElement('input');
+                        radio.type = "radio";
+                        radio.name = "radio-group";
+                        radio.className = i + '.' + j;
+                        radio.style.visibility = "hidden";
+                        cell.appendChild(radio);
                     } else {
                         text = document.createElement('input');
                         text.style.border = "none";
@@ -259,7 +266,7 @@
             } else {
                 besideCell = document.querySelector('table input[name="'+col+'.1"]');
             }
-            console.log(besideCell);
+            // console.log(besideCell);
 
             // 할일(과목, 세부할일)이 비어있으면 해당 행의 colorpicker 없어지고, 있으면 colorpicker 생김
             if (currentCell.value == '') {
@@ -269,9 +276,13 @@
             }
         }
 
-        // 할일 지정하기(한번클릭) - 미완성
-        function checkTodo(target) {
-            console.log("checkTodo");
+        // 할일 지정하기(한번클릭)
+        function checkTodo(todoChecker) {
+            const col = todoChecker.className.split('.')[0];  // 행
+            let todoRadio = document.querySelector('table input[class="'+ col +'.0"]');
+            console.log(todoRadio);
+            todoRadio.checked = true;
+            // todoChecker.style.border = "1px solid red";
         }
 
         // 할일 색상을 선택할 수 있도록 colorpicker 화면 출력(두번클릭)
