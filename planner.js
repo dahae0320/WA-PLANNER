@@ -275,3 +275,7 @@ $(".bookmark").on('click', function(){
     }
 })
 
+$(".bookmark").change(function(){
+    $(".bookmark").css('border', '0px solid red');
+    $(".bookmark").css('opacity', '50%');
+})

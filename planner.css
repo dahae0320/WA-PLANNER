@@ -192,7 +192,7 @@ tbody > tr > td > input[type="radio"] {
     opacity: 0;
     top: 5%;
     left: 90%;
-    width: 25%;
+    width: 25%; 
     height: 3%;
     border: 1px dotted rgb(154, 154, 154);
 }
