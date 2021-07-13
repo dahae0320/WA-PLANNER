@@ -251,6 +251,8 @@ $('.bookmark').on('mouseleave', function(){
 //컬러 변경시 적용
 $(".bookmark-color").change(function(){
     $(".bookmark").css('background-color', $('.bookmark-color').val());
+    $(".bookmark").css('border', '0px solid red');
+    $(".bookmark").css('opacity', '50%');
 })
 
 //원클릭시 북마크 생성, 더블클릭시 색 변경
@@ -273,9 +275,4 @@ $(".bookmark").on('click', function(){
                 clickCnt = 0;
             break;
     }
-})
-
-$(".bookmark").change(function(){
-    $(".bookmark").css('border', '0px solid red');
-    $(".bookmark").css('opacity', '50%');
 })
